@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        CSS values and units - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        CSS values and units
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-05-09 14:34:39</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank" rel="noopener">MDN</a></p>
+<ul>
+<li>Numeric values: Length values for specifying e.g. element width, border thickness, or font size, and unitless integers for specifying e.g. relative line width or number of times to run an animation.</li>
+<li>Percentages: Can also be used to specify size or length — relative to a parent container’s width or height for example, or the default font-size. These are often to facilitate responsive design (e.g. creating “liquid layouts”, which automatically adjust to fit on different screen sizes).</li>
+<li>Colors: For specifying background colors, text colors, etc.</li>
+<li>Functions: For specifying e.g. background images or background image gradients.</li>
+</ul>
+<p><strong>Pixels</strong> (px) are referred to as <strong>absolute units</strong> because they will always be the same size regardless of any other related settings. Other absolute units are as follows:</p>
+<ul>
+<li>q, mm, cm, in: Quarter millimeters, millimeters, centimeters, or inches.</li>
+<li>pt, pc: Points (1/72 of an inch) or picas (12 points.)</li>
+</ul>
+<p>You probably won’t use any of these very often except pixels.</p>
+<p>There are also <strong>relative units</strong>, which are relative to the current element’s <strong>font-siz</strong>e or <strong>viewport</strong> size:</p>
+<ul>
+<li>em: 1em is the same as the font-size of the current element. The default base font-size given to web pages by web browsers before CSS styling is applied is 16 pixels, which means the computed value of 1em is 16 pixels for an element by default. But beware — font sizes are inherited by elements from their parents, so if different font sizes have been set on parent elements, the pixel equivalent of an em can start to become complicated. Don’t worry too much about this for now — we’ll cover inheritance and font-sizing in more detail in later articles and modules. em are the most common relative unit you’ll use in web development.</li>
+<li>ex, ch: Respectively these are the height of a lower case x, and the width of the number 0. These are not as commonly used or well-supported as em.</li>
+<li>rem: The rem (root em) works in exactly the same way as the em, except that it will always equal the size of the default base font-size; inherited font sizes will have no effect, so this sounds like a much better option than em, although rems don’t work in older versions of Internet Explorer (see more about cross-browser support in Debugging CSS.)</li>
+<li>vw, vh: Respectively these are 1/100th of the width of the viewport, and 1/100th of the height of the viewport. Again, these are not as widely supported as em.</li>
+<li>%</li>
+</ul>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

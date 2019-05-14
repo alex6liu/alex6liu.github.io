@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        client side javascript l1 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Events-Handling"><span class="toc-text">Events Handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX"><span class="toc-text">AJAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cross-Domain-Communication"><span class="toc-text">Cross-Domain Communication</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-Manipulation"><span class="toc-text">DOM Manipulation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Events-Basics"><span class="toc-text">Events Basics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Events-Propagation-Preventing"><span class="toc-text">Events Propagation / Preventing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Global-object-window"><span class="toc-text">Global object window</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules"><span class="toc-text">Modules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nodes-Modification"><span class="toc-text">Nodes Modification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Timers"><span class="toc-text">Timers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-Storage"><span class="toc-text">Web Storage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#optional"><span class="toc-text">optional</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cross-Origin-Requests"><span class="toc-text">Cross-Origin Requests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Events-Advanced"><span class="toc-text">Events Advanced</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules-Advanced"><span class="toc-text">Modules Advanced</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Page-Lifecycle"><span class="toc-text">Page Lifecycle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-Security"><span class="toc-text">Web Security</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebSockets"><span class="toc-text">WebSockets</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        client side javascript l1
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-05-14 15:53:26</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#l1" title="l1">l1</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="Events-Handling"><a href="#Events-Handling" class="headerlink" title="Events Handling"></a>Events Handling</h2><p>Event Phases<br>Know Event phases<br>Be able to explain difference between capturing and bubbling<br>Event Listeners<br>Be able to handle events<br>Be able to create custom events<br>Be able to trigger events (both built-in and custom)</p>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>XMLHttpRequest<br>Know HTTP protocol basics<br>Know AJAX concept<br>Know how XMLHttpRequest works<br>Understand AJAX security policy<br>Be able to explain difference between AJAX request and Form submit<br>Be able to create AJAX request (set content type, set response type, set custom headers)<br>Be able to process AJAX response (parse response data)<br>Be able to handle AJAX errors (including error codes)<br>[fetch]<br>[$.ajax]</p>
+<h2 id="Cross-Domain-Communication"><a href="#Cross-Domain-Communication" class="headerlink" title="Cross-Domain Communication"></a>Cross-Domain Communication</h2><p>JSONP<br>Know JSONP prerequisites<br>Be able to create JSONP request<br>Be able to process JSON response<br>Be able to explain difference between JSONP and AJAX</p>
+<h2 id="DOM-Manipulation"><a href="#DOM-Manipulation" class="headerlink" title="DOM Manipulation"></a>DOM Manipulation</h2><p>Selectors<br>Know various types of selectors<br>Understand selectors impotency and specifity<br>Know how to find and select the certain elements in DOM<br>Be able to discover selectors performance issues, limitations and optimizations<br>Traversing<br>Know how to traverse DOM tree vertically (parent, childNodes)<br>Know how to traverse DOM tree horizontally (siblings)<br>Be able to discover traversing performance and optimizations<br>Modification<br>Be able to add/remove/update DOM elements<br>Know DOM modification performance issues and bottlenecks<br>Understand DOM optimizations<br>Live Collections</p>
+<h2 id="Events-Basics"><a href="#Events-Basics" class="headerlink" title="Events Basics"></a>Events Basics</h2><p>DOM Events<br>Know Event concept<br>Know basic Event types<br>Mouse / Keyboard Events<br>Form / Input Events</p>
+<h2 id="Events-Propagation-Preventing"><a href="#Events-Propagation-Preventing" class="headerlink" title="Events Propagation / Preventing"></a>Events Propagation / Preventing</h2><p>Know Event propagation cycle<br>Know how to stop Event propagation<br>Know how to prevent Event default browser behavior<br>Delegating<br>Understand Event delegating concept<br>Understand Event delegating benefits and drawbacks<br>Be able to implement Event delegating</p>
+<h2 id="Global-object-window"><a href="#Global-object-window" class="headerlink" title="Global object window"></a>Global object window</h2><p>Location<br>Know browser location structure<br>Be able to explain client and server side navigation concept<br>History API (Global object window)<br>Know browser history concept<br>Be able to navigate within browser history<br>Be able to use history state<br>Be able to replace history state<br>Navigator<br>Know how to parse user agent<br>Know how to discover client platform, browser<br>Document<br>Screen<br>Cookies<br>Know cookie concept and limitations<br>Know how to work with cookies<br>Know cookie types and security policy</p>
+<h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><p>CommonJS<br>Know JavaScript modules concept<br>Know CommonJS module notation<br>Understand difference between module notation and implementation<br>Be able to use CommonJS modules in both browser and NodeJS<br>AMD, UMD<br>Know AMD notation<br>Know difference between CommonJS/AMD/UMD module notations<br>ES2015<br>Know ES2015 module notation</p>
+<h2 id="Nodes-Modification"><a href="#Nodes-Modification" class="headerlink" title="Nodes Modification"></a>Nodes Modification</h2><p>Node Properties<br>Node Attributes<br>Know how to modify DOM element properties and attributes<br>Understand DOM element properties / attributes connection<br>Data Attributes<br>CSS Scripting<br>Be able to add/toggle/remove CSS classes for DOM element<br>Be able to modify inline styles for DOM element<br>Be able to explain inline styles performance issues</p>
+<h2 id="Timers"><a href="#Timers" class="headerlink" title="Timers"></a>Timers</h2><p>[setTimeout]<br>[setInterval]<br>[clearTimeout]<br>[requestAnimationFrame]<br>Understand [requestAnimationFrame] concept<br>Be able to explain difference between [setTimeout] and [requestAnimationFrame]</p>
+<h2 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h2><p>LocalStorage<br>SessionStorage<br>Know web storages limitations and security policy<br>IndexedDB</p>
+<h2 id="optional"><a href="#optional" class="headerlink" title="optional"></a>optional</h2><h2 id="Cross-Origin-Requests"><a href="#Cross-Origin-Requests" class="headerlink" title="Cross-Origin Requests"></a>Cross-Origin Requests</h2><p>Know AJAX security policy<br>Understand cross domain request prerequisites<br>Be able to handle AJAX security issues<br>IFrame</p>
+<h2 id="Events-Advanced"><a href="#Events-Advanced" class="headerlink" title="Events Advanced"></a>Events Advanced</h2><p>Mobile Events<br>Custom Events</p>
+<h2 id="Modules-Advanced"><a href="#Modules-Advanced" class="headerlink" title="Modules Advanced"></a>Modules Advanced</h2><p>RequireJS<br>Know how to define AMD module<br>Know how to define AMD module dependencies<br>Know how to wrap CommonJS module for AMD<br>Be able to configure RequireJS<br>Be able to use RequireJS plugins<br>SystemJS<br>Know how to define SystemJS module<br>Know how to define SystemJS module dependencies<br>Know how to wrap CommonJS/AMD modules for SystemJS<br>Be able to configure SystemJS<br>Be able to use SystemJS plugins</p>
+<h2 id="Page-Lifecycle"><a href="#Page-Lifecycle" class="headerlink" title="Page Lifecycle"></a>Page Lifecycle</h2><p>Parsing<br>Reflow<br>Repaint<br>Optimizations</p>
+<h2 id="Web-Security"><a href="#Web-Security" class="headerlink" title="Web Security"></a>Web Security</h2><p>CSRF<br>Know CSRF attack vector<br>Know protection methods against CSRF attack<br>XSS<br>Know XSS attack vector<br>Know protection methods against XSS attack<br>Be able to compare CSRF and XSS attacks</p>
+<h2 id="WebSockets"><a href="#WebSockets" class="headerlink" title="WebSockets"></a>WebSockets</h2><p>WebSocket concept<br>WenSocket interface</p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

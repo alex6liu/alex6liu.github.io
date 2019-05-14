@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        js Arrays - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-literals"><span class="toc-text">Array literals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Methods"><span class="toc-text">Methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-length"><span class="toc-text">Array.length</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#how-Array-length-property-works"><span class="toc-text">how Array length property works</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        js Arrays
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-05-10 09:50:43</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#array" title="array">array</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="Array-literals"><a href="#Array-literals" class="headerlink" title="Array literals"></a>Array literals</h2><p>array literal notation is where you define a new array using just empty brackets.<code>var myArray = [];</code></p>
+<p>It is the “new” way of defining arrays, and I suppose it is shorter/cleaner.</p>
+<p>The examples below explain the difference between them:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [],            <span class="comment">// these are the same</span></span><br><span class="line">b = <span class="keyword">new</span> <span class="built_in">Array</span>(),   <span class="comment">// a and b are arrays with length 0</span></span><br><span class="line"></span><br><span class="line">c = [<span class="string">'foo'</span>, <span class="string">'bar'</span>],           <span class="comment">// these are the same</span></span><br><span class="line">d = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'foo'</span>, <span class="string">'bar'</span>),  <span class="comment">// c and d are arrays with 2 strings</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// these are different:</span></span><br><span class="line">e = [<span class="number">3</span>],             <span class="comment">// e.length == 1, e[0] == 3</span></span><br><span class="line">f = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);   <span class="comment">// f.length == 3, f[0] == undefined</span></span><br></pre></td></tr></table></figure>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ul>
+<li>forEach</li>
+<li>map</li>
+<li>push // add to the end</li>
+<li>unshift // add to the front</li>
+<li>pop // remove from the end</li>
+<li>shift // remove from the front</li>
+<li>splice // remove</li>
+<li>slice // sub array</li>
+</ul>
+<h2 id="Array-length"><a href="#Array-length" class="headerlink" title="Array.length"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length" target="_blank" rel="noopener">Array.length</a></h2><h3 id="how-Array-length-property-works"><a href="#how-Array-length-property-works" class="headerlink" title="how Array length property works"></a>how Array length property works</h3><ul>
+<li>Reading the length</li>
+</ul>
+<p>1) For a dense array, this means that the length corresponds strictly to the number of elements:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruits = [<span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]; <span class="comment">//fruits is a dense array  </span></span><br><span class="line">fruits.length <span class="comment">// prints 3, the real count of elements</span></span><br><span class="line"></span><br><span class="line">fruits.push(<span class="string">'mango'</span>);  </span><br><span class="line">fruits.length <span class="comment">// prints 4, one element was added</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> empty = [];  </span><br><span class="line">empty.length <span class="comment">// prints 0, empty array</span></span><br></pre></td></tr></table></figure>
+<p>The dense array does not have empties and the number of items corresponds to highestIndex + 1. In [3, 5, 7, 8] the highest index is 3 of element 8, thus the array size is 3 + 1 = 4.</p>
+<p>2) In a sparse array (which has empties), the number of elements does not correspond to length value, but still is determined by the highest index:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = [<span class="string">'cat'</span>, <span class="string">'dog'</span>, , <span class="string">'monkey'</span>]; <span class="comment">// animals is sparse  </span></span><br><span class="line">animals.length <span class="comment">// prints 4, but real number of elements is 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">'hello'</span>];  </span><br><span class="line">words[<span class="number">6</span>] = <span class="string">'welcome'</span>; <span class="comment">//the highest index is 6. words is sparse  </span></span><br><span class="line">words.length <span class="comment">//prints 7, based on highest index</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Modifying the length</li>
+</ul>
+<p>1) Modifying the property leads to cut the elements (if the new value is smaller than the highest index):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"></span><br><span class="line">numbers.length = <span class="number">3</span>; <span class="comment">// modify the array length  </span></span><br><span class="line">numbers <span class="comment">// prints [1, 3, 5], elements 7 and 8 are removed</span></span><br></pre></td></tr></table></figure>
+<p>2) or creating a sparse array (if the new value is bigger than the highest index):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> osTypes = [<span class="string">'OS X'</span>, <span class="string">'Linux'</span>, <span class="string">'Windows'</span>];</span><br><span class="line"></span><br><span class="line">osTypes.length = <span class="number">5</span>; <span class="comment">// creating a sparse array. Elements at indexes 3 and 4  </span></span><br><span class="line">                    <span class="comment">// do not exist</span></span><br><span class="line"></span><br><span class="line">osTypes <span class="comment">// prints ['OS X', 'Linux', 'Windows', , , ]</span></span><br></pre></td></tr></table></figure>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        var let const - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#var"><span class="toc-text">var</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#let-amp-const"><span class="toc-text">let &amp; const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Able-to-explain-dead-zone-concept-for-let"><span class="toc-text">Able to explain dead zone concept for [let]</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        var let const
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-05-10 10:32:38</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p><a href="https://blog.usejournal.com/scoping-with-var-let-const-c0060135e09d" target="_blank" rel="noopener">Scoping with var, let &amp; const</a><br><a href="https://tylermcginnis.com/var-let-const/" target="_blank" rel="noopener">var vs let vs const in JavaScript</a></p>
+<h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><ul>
+<li><code>var</code> has <strong>functional</strong> scope not block scope</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// ReferenceError: bar is not defined</span></span><br></pre></td></tr></table></figure>
+<p>variables defined with var keyword are not block scoped</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// prints hello</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Variables declared with var keyword are hoisted.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// prints undefined</span></span><br></pre></td></tr></table></figure>
+<p>The variable bar defined inside if block is visible to the outside block but within the function foo’s scope. This is because the JavaScript engine read the above code as following:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> bar; <span class="comment">// hoisted the declaration but not assignment</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    bar = <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(bar); <span class="comment">// undefined but no reference error</span></span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// prints undefined</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Variables defined with var keywords can be redeclared in the same scope</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> bar = <span class="string">'hello'</span>;</span><br><span class="line"> <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">   <span class="keyword">var</span> bar = <span class="string">'hi'</span>; <span class="comment">// no error !! replaced easily</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">console</span>.log(bar);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// prints hi</span></span><br></pre></td></tr></table></figure>
+<h2 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let &amp; const"></a>let &amp; const</h2><ul>
+<li>Variables declared with <code>let</code> &amp; <code>const</code> keyword are visible only inside the <strong>block</strong> in which it’s defined.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> baz = <span class="string">'hi'</span>;</span><br><span class="line">    <span class="keyword">let</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(baz, bar); <span class="comment">// prints hello hi</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(baz, bar); <span class="comment">// ReferenceError: baz is not defined</span></span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Variables declared with <code>let</code> &amp; <code>const</code> keyword are <strong>not</strong> subjected to hoisting.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(bar); <span class="comment">// ReferenceError: bar is not defined</span></span><br><span class="line">  <span class="keyword">let</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Variables defined with <code>let</code> &amp; <code>const</code> keywords <strong>cannot</strong> be redeclared in the same block scope.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">const</span> bar = <span class="string">'hi'</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// SyntaxError: Identifier 'bar' has already been declared</span></span><br></pre></td></tr></table></figure>
+<p>But a variable can be redeclared in function scope, given its declared within a <strong>different</strong> block scope.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> bar = <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> bar = <span class="string">'hi'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(bar); <span class="comment">// prints hi</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(bar); <span class="comment">// prints hello </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Able-to-explain-dead-zone-concept-for-let"><a href="#Able-to-explain-dead-zone-concept-for-let" class="headerlink" title="Able to explain dead zone concept for [let]"></a>Able to explain dead zone concept for [let]</h2><p><a href="https://stackoverflow.com/questions/33198849/what-is-the-temporal-dead-zone" target="_blank" rel="noopener">stackoverflow</a></p>
+<p>accessing let and const values before they are initialized can cause a ReferenceError because of something called the temporal dead zone.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(aVar); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(aLet); <span class="comment">// causes ReferenceError: aLet is not defined</span></span><br><span class="line"><span class="keyword">var</span> aVar = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> aLet = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>It appears from these examples that <code>let</code> declarations (and <code>const</code>, which works the same way) may not be hoisted, since <code>aLet</code> does not appear to exist before it is assigned a value.</p>
+</blockquote>
+<blockquote>
+<p>That is not the case, however—<code>let</code> and <code>const</code> are <strong>hoisted</strong> (like <code>var</code>, <code>class</code> and <code>function</code>), but there is a period between entering scope and being declared where they cannot be accessed. This period is the <strong>temporal dead zone</strong> (TDZ).</p>
+</blockquote>
+<blockquote>
+<p>The TDZ ends when <code>aLet</code> is declared, rather than assigned:</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> and <span class="keyword">const</span> have two broad differences <span class="keyword">from</span> <span class="keyword">var</span>:</span><br><span class="line"></span><br><span class="line">They are block scoped.</span><br><span class="line">Accessing a <span class="keyword">var</span> before it is declared has the result <span class="literal">undefined</span>; accessing a <span class="keyword">let</span> or <span class="keyword">const</span> before it is declared throws <span class="built_in">ReferenceError</span>:</span><br><span class="line"><span class="built_in">console</span>.log(aVar); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(aLet); <span class="comment">// causes ReferenceError: aLet is not defined</span></span><br><span class="line"><span class="keyword">var</span> aVar = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> aLet = <span class="number">2</span>;</span><br><span class="line"> Run code snippetExpand snippet</span><br><span class="line">It appears <span class="keyword">from</span> these examples that <span class="keyword">let</span> declarations (and <span class="keyword">const</span>, which works the same way) may not be hoisted, since aLet does not appear to exist before it is assigned a value.</span><br><span class="line"></span><br><span class="line">That is not the <span class="keyword">case</span>, however—<span class="keyword">let</span> and <span class="keyword">const</span> are hoisted (like <span class="keyword">var</span>, <span class="class"><span class="keyword">class</span> <span class="title">and</span> <span class="title">function</span>), <span class="title">but</span> <span class="title">there</span> <span class="title">is</span> <span class="title">a</span> <span class="title">period</span> <span class="title">between</span> <span class="title">entering</span> <span class="title">scope</span> <span class="title">and</span> <span class="title">being</span> <span class="title">declared</span> <span class="title">where</span> <span class="title">they</span> <span class="title">cannot</span> <span class="title">be</span> <span class="title">accessed</span>. <span class="title">This</span> <span class="title">period</span> <span class="title">is</span> <span class="title">the</span> <span class="title">temporal</span> <span class="title">dead</span> <span class="title">zone</span> (<span class="title">TDZ</span>).</span></span><br><span class="line"><span class="class"></span></span><br><span class="line">The TDZ ends when aLet is declared, rather than assigned:</span><br><span class="line"></span><br><span class="line"><span class="comment">//console.log(aLet)  // would throw ReferenceError</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> aLet;</span><br><span class="line"><span class="built_in">console</span>.log(aLet); <span class="comment">// undefined</span></span><br><span class="line">aLet = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(aLet); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>This example shows that <code>let</code> is hoisted:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="string">'outer value'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// start TDZ for x</span></span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">  <span class="keyword">let</span> x = <span class="string">'inner value'</span>; <span class="comment">// declaration ends TDZ for x</span></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<p>Accessing <code>x</code> in the inner scope still causes a <code>ReferenceError</code>. If <code>let</code> were not hoisted, it would log <code>outer value</code>.</p>
+<p>The TDZ is a good thing because it helps to highlight bugs—accessing a value before it has been declared is rarely intentional.</p>
+<p><a href="https://juejin.im/post/5b0238f66fb9a07aca7a74ba" target="_blank" rel="noopener">ES6 系列之 let 和 const</a></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

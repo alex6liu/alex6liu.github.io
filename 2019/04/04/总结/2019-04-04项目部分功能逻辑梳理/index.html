@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        2019-04-04项目部分功能逻辑梳理 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#商城项目部分逻辑梳理"><span class="toc-text">商城项目部分逻辑梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户注册（需要获取到手机号）"><span class="toc-text">用户注册（需要获取到手机号）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手机注册"><span class="toc-text">手机注册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#手机号验证"><span class="toc-text">手机号验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#短信验证码发送倒计时"><span class="toc-text">短信验证码发送倒计时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#短信验证码验证"><span class="toc-text">短信验证码验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能检验"><span class="toc-text">功能检验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#商品加入购物车、直接购买"><span class="toc-text">商品加入购物车、直接购买</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#功能检验-1"><span class="toc-text">功能检验</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        2019-04-04项目部分功能逻辑梳理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-04-04 11:07:14</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#逻辑" title="逻辑">逻辑</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="商城项目部分逻辑梳理"><a href="#商城项目部分逻辑梳理" class="headerlink" title="商城项目部分逻辑梳理"></a>商城项目部分逻辑梳理</h1><h2 id="用户注册（需要获取到手机号）"><a href="#用户注册（需要获取到手机号）" class="headerlink" title="用户注册（需要获取到手机号）"></a>用户注册（需要获取到手机号）</h2><p>用户第一次登录微信小程序会有openid</p>
+<p>可以选择微信注册（老版本的微信注册可能会不需要手机号）或者手机号注册</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button open-type=<span class="string">'getPhoneNumber'</span> onGetPhoneNumber=&#123;处理后续注册操作&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>微信注册后，得到unionid</p>
+<h2 id="手机注册"><a href="#手机注册" class="headerlink" title="手机注册"></a>手机注册</h2><h3 id="手机号验证"><a href="#手机号验证" class="headerlink" title="手机号验证"></a>手机号验证</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="regexp">/^(((13[0-9]&#123;1&#125;)|(14[0-9]&#123;1&#125;)|(15[0-9]&#123;1&#125;)|(16[0-9]&#123;1&#125;)|(17[0-9]&#123;1&#125;)|(18[0-9]&#123;1&#125;)|(19[0-9]&#123;1&#125;))+\d&#123;8&#125;)$/</span>.test(phoneNumber)</span><br></pre></td></tr></table></figure>
+<h3 id="短信验证码发送倒计时"><a href="#短信验证码发送倒计时" class="headerlink" title="短信验证码发送倒计时"></a>短信验证码发送倒计时</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// state = &#123; timeCountDown: 60 &#125;</span></span><br><span class="line">timeCountDownFunc () &#123;</span><br><span class="line">    <span class="keyword">const</span> countdown = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        timeCountDown: --<span class="keyword">this</span>.state.timeCountDown</span><br><span class="line">      &#125;, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.state.timeCountDown===<span class="number">0</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            checkCodeClicked: <span class="literal">false</span>,</span><br><span class="line">            timeCountDown: <span class="number">60</span></span><br><span class="line">          &#125;)</span><br><span class="line">          clearInterval(countdown)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="短信验证码验证"><a href="#短信验证码验证" class="headerlink" title="短信验证码验证"></a>短信验证码验证</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="regexp">/^([0-9]&#123;6&#125;)$/</span>.test(checkCode)</span><br></pre></td></tr></table></figure>
+<h3 id="功能检验"><a href="#功能检验" class="headerlink" title="功能检验"></a>功能检验</h3><ul>
+<li>判断手机号是否正确</li>
+<li>判断短信验证码是否正确</li>
+<li>判断后端返回的错误信息</li>
+<li>执行手机号注册功能</li>
+</ul>
+<h2 id="商品加入购物车、直接购买"><a href="#商品加入购物车、直接购买" class="headerlink" title="商品加入购物车、直接购买"></a>商品加入购物车、直接购买</h2><h3 id="功能检验-1"><a href="#功能检验-1" class="headerlink" title="功能检验"></a>功能检验</h3><ul>
+<li>判断商品库存</li>
+<li>判断是否是在团购、秒杀等时间内</li>
+<li>判断后端返回的错误信息</li>
+<li>执行加入购物车、立即购买功能</li>
+</ul>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

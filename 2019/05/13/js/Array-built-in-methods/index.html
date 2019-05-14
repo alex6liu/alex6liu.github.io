@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Array built-in methods - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-copy-array"><span class="toc-text">how to copy array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simple-way"><span class="toc-text">simple way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#built-in-way"><span class="toc-text">built-in way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-Can’t-I-Use-to-Copy-an-Array"><span class="toc-text">Why Can’t I Use = to Copy an Array?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-copy-array-part"><span class="toc-text">how to copy array part</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-modify-array"><span class="toc-text">how to modify array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-sort-Array"><span class="toc-text">how to sort Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Be-able-to-custom-sorting-for-Array"><span class="toc-text">Be able to custom sorting for Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Be-able-to-filter-Array-elements"><span class="toc-text">Be able to filter Array elements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Several-method-how-to-iterate-Array-elements"><span class="toc-text">Several method how to iterate Array elements</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Array built-in methods
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-05-13 10:55:13</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#array" title="array">array</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="how-to-copy-array"><a href="#how-to-copy-array" class="headerlink" title="how to copy array"></a>how to copy array</h2><h3 id="simple-way"><a href="#simple-way" class="headerlink" title="simple way"></a>simple way</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sheeps = [<span class="string">'🐑'</span>, <span class="string">'🐑'</span>, <span class="string">'🐑'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Old way</span></span><br><span class="line"><span class="keyword">const</span> cloneSheeps = sheeps.slice();</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 way</span></span><br><span class="line"><span class="keyword">const</span> cloneSheepsES6 = [...sheeps];</span><br></pre></td></tr></table></figure>
+<h3 id="built-in-way"><a href="#built-in-way" class="headerlink" title="built-in way"></a>built-in way</h3><p>The <code>Array.from()</code> method creates a new, shallow-copied <code>Array</code> instance from an array-like or iterable object.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(<span class="string">'foo'</span>));</span><br><span class="line"><span class="comment">// expected output: Array ["f", "o", "o"]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], x =&gt; x + x));</span><br><span class="line"><span class="comment">// expected output: Array [2, 4, 6]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Why-Can’t-I-Use-to-Copy-an-Array"><a href="#Why-Can’t-I-Use-to-Copy-an-Array" class="headerlink" title="Why Can’t I Use = to Copy an Array?"></a>Why Can’t I Use <code>=</code> to Copy an Array?</h3><p>Because arrays in JS are reference values, so when you try to copy it using the <code>=</code> it will only copy the reference to the original array and not the value of the array.</p>
+<p>To create a real copy of an array, you need to copy over the value of the array under a new value variable. That way this new array does not reference to the old array address in memory.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sheeps = [<span class="string">'🐑'</span>, <span class="string">'🐑'</span>, <span class="string">'🐑'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fakeSheeps = sheeps;</span><br><span class="line"><span class="keyword">const</span> cloneSheeps = [...sheeps];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sheeps === fakeSheeps);</span><br><span class="line"><span class="comment">// true --&gt; it's pointing to the same memory space</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sheeps === cloneSheeps);</span><br><span class="line"><span class="comment">// false --&gt; it's pointing to a new memory space</span></span><br></pre></td></tr></table></figure>
+<h2 id="how-to-copy-array-part"><a href="#how-to-copy-array-part" class="headerlink" title="how to copy array part"></a>how to copy array part</h2><p>The <code>slice()</code> method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = [<span class="string">'ant'</span>, <span class="string">'bison'</span>, <span class="string">'camel'</span>, <span class="string">'duck'</span>, <span class="string">'elephant'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animals.slice(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: Array ["camel", "duck", "elephant"]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animals.slice(<span class="number">2</span>, <span class="number">4</span>));</span><br><span class="line"><span class="comment">// expected output: Array ["camel", "duck"]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animals.slice(<span class="number">1</span>, <span class="number">5</span>));</span><br><span class="line"><span class="comment">// expected output: Array ["bison", "camel", "duck", "elephant"]</span></span><br></pre></td></tr></table></figure>
+<h2 id="how-to-modify-array"><a href="#how-to-modify-array" class="headerlink" title="how to modify array"></a>how to modify array</h2><h2 id="how-to-sort-Array"><a href="#how-to-sort-Array" class="headerlink" title="how to sort Array"></a>how to sort Array</h2><p><code>Array.sort()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> months = [<span class="string">'March'</span>, <span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Dec'</span>];</span><br><span class="line">months.sort();</span><br><span class="line"><span class="built_in">console</span>.log(months);</span><br><span class="line"><span class="comment">// expected output: Array ["Dec", "Feb", "Jan", "March"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">4</span>, <span class="number">21</span>, <span class="number">100000</span>];</span><br><span class="line">array1.sort();</span><br><span class="line"><span class="built_in">console</span>.log(array1);</span><br><span class="line"><span class="comment">// expected output: Array [1, 100000, 21, 30, 4]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Be-able-to-custom-sorting-for-Array"><a href="#Be-able-to-custom-sorting-for-Array" class="headerlink" title="Be able to custom sorting for Array"></a>Be able to custom sorting for Array</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a is less than b by some ordering criterion) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (a is greater than b by the ordering criterion) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// a must be equal to b</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>];</span><br><span class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(numbers);</span><br><span class="line"></span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Be-able-to-filter-Array-elements"><a href="#Be-able-to-filter-Array-elements" class="headerlink" title="Be able to filter Array elements"></a>Be able to filter Array elements</h2><p>The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> words = [<span class="string">'spray'</span>, <span class="string">'limit'</span>, <span class="string">'elite'</span>, <span class="string">'exuberant'</span>, <span class="string">'destruction'</span>, <span class="string">'present'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = words.filter(<span class="function"><span class="params">word</span> =&gt;</span> word.length &gt; <span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"><span class="comment">// expected output: Array ["exuberant", "destruction", "present"]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Several-method-how-to-iterate-Array-elements"><a href="#Several-method-how-to-iterate-Array-elements" class="headerlink" title="Several method how to iterate Array elements"></a>Several method how to iterate Array elements</h2><ul>
+<li><p>Basic For Loop</p>
+</li>
+<li><p>Lodash forEach</p>
+</li>
+<li><p>The <code>forEach()</code> method executes a provided function once for each array element.</p>
+</li>
+<li><p>The <code>map()</code> method creates a new array with the results of calling a provided function on every element in the calling array.</p>
+</li>
+<li><p>The <code>entries()</code> method returns a new Array Iterator object that contains the key/value pairs for each index in the array.</p>
+</li>
+</ul>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

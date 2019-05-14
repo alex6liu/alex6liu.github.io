@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        You Dont&#39;t Know JS 笔记(1) - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Up-amp-Going"><span class="toc-text">Up &amp; Going</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-1-Into-Programming"><span class="toc-text">Chapter 1: Into Programming</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get-user-input"><span class="toc-text">get user input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Converting-Between-Types"><span class="toc-text">Converting Between Types</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scope"><span class="toc-text">Scope</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-2-Into-JavaScript"><span class="toc-text">Chapter 2: Into JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Values-amp-Types"><span class="toc-text">Values &amp; Types</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强制类型转化"><span class="toc-text">强制类型转化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#False"><span class="toc-text">False</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#True"><span class="toc-text">True</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-Scopes"><span class="toc-text">Function Scopes</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hoisting"><span class="toc-text">Hoisting</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nested-Scopes"><span class="toc-text">Nested Scopes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Immediately-Invoked-Function-Expressions-IIFEs"><span class="toc-text">Immediately Invoked Function Expressions (IIFEs)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Closure"><span class="toc-text">Closure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-Identifier"><span class="toc-text">this Identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prototypes"><span class="toc-text">Prototypes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polyfilling"><span class="toc-text">Polyfilling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transpiling"><span class="toc-text">Transpiling</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        You Dont't Know JS 笔记(1)
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-04-30 15:54:01</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="Up-amp-Going"><a href="#Up-amp-Going" class="headerlink" title="Up &amp; Going"></a>Up &amp; Going</h1><h2 id="Chapter-1-Into-Programming"><a href="#Chapter-1-Into-Programming" class="headerlink" title="Chapter 1: Into Programming"></a>Chapter 1: Into Programming</h2><h3 id="get-user-input"><a href="#get-user-input" class="headerlink" title="get user input"></a>get user input</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = prompt( <span class="string">"Please tell me your age:"</span> );</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( age );</span><br></pre></td></tr></table></figure>
+<h3 id="Converting-Between-Types"><a href="#Converting-Between-Types" class="headerlink" title="Converting Between Types"></a>Converting Between Types</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"42"</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Number</span>( a );</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a ); <span class="comment">// "42"</span></span><br><span class="line"><span class="built_in">console</span>.log( b ); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+<h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// we can access both `a` and `b` here</span></span><br><span class="line">		<span class="built_in">console</span>.log( a + b );	<span class="comment">// 3</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	inner();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// we can only access `a` here</span></span><br><span class="line">	<span class="built_in">console</span>.log( a );			<span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
+<p>So, code inside the <code>inner()</code> function has access to both variables <code>a</code> and <code>b</code>, but code in <code>outer()</code> has access only to <code>a</code> – it cannot access <code>b</code> because that variable is only inside <code>inner()</code>.</p>
+<h2 id="Chapter-2-Into-JavaScript"><a href="#Chapter-2-Into-JavaScript" class="headerlink" title="Chapter 2: Into JavaScript"></a>Chapter 2: Into JavaScript</h2><h3 id="Values-amp-Types"><a href="#Values-amp-Types" class="headerlink" title="Values &amp; Types"></a>Values &amp; Types</h3><ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>null and undefined</li>
+<li>object</li>
+<li>symbol (new to ES6)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">typeof</span> a;				<span class="comment">// "object" -- weird, bug</span></span><br></pre></td></tr></table></figure>
+<p>Also, note <code>a = undefined</code>. We’re explicitly setting <code>a</code> to the <code>undefined</code> value, but that is behaviorally no different from a variable that has no value set yet, like with the <code>var a</code>; line at the top of the snippet. A variable can get to this “undefined” value state in several different ways, including functions that return no values and usage of the void operator.</p>
+<p>array and function. But rather than being proper built-in types, these should be thought of more like subtypes – specialized versions of the <code>object</code> type.</p>
+<h3 id="强制类型转化"><a href="#强制类型转化" class="headerlink" title="强制类型转化"></a>强制类型转化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"42"</span>;</span><br><span class="line"><span class="keyword">var</span> b = a * <span class="number">1</span>;	<span class="comment">// "42" implicitly coerced to 42 here</span></span><br><span class="line"></span><br><span class="line">a;				<span class="comment">// "42"</span></span><br><span class="line">b;				<span class="comment">// 42 -- the number!</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">var</span> b = a + <span class="string">'a'</span>;</span><br><span class="line"></span><br><span class="line">a;				<span class="comment">// 42</span></span><br><span class="line">b;				<span class="comment">// "42a" -- the String!</span></span><br></pre></td></tr></table></figure>
+<p>You should take special note of the == and === comparison rules if you’re comparing two non-primitive values, like objects (including function and array). Because those values are actually held by reference, both == and === comparisons will simply check whether the references match, not anything about the underlying values.</p>
+<p>For example, arrays are by default coerced to strings by simply joining all the values with commas (<code>,</code>) in between. You might think that two arrays with the same contents would be == equal, but they’re not:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">"1,2,3"</span>;</span><br><span class="line"></span><br><span class="line">a == c;		<span class="comment">// true</span></span><br><span class="line">b == c;		<span class="comment">// true</span></span><br><span class="line">a == b;		<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>how can all three of those comparisons be false? Because the <code>b</code> value is being coerced to the “invalid number value” <code>NaN</code> in the <code>&lt;</code> and <code>&gt;</code> comparisons, and the specification says that <code>NaN</code> is neither greater-than nor less-than any other value.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line">a &lt; b;		<span class="comment">// false</span></span><br><span class="line">a &gt; b;		<span class="comment">// false</span></span><br><span class="line">a == b;		<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h4 id="False"><a href="#False" class="headerlink" title="False"></a>False</h4><ul>
+<li>“” (empty string)</li>
+<li>0, -0, NaN (invalid number)</li>
+<li>null, undefined</li>
+<li>false</li>
+</ul>
+<h4 id="True"><a href="#True" class="headerlink" title="True"></a>True</h4><ul>
+<li>“hello”</li>
+<li>42</li>
+<li>true</li>
+<li style="list-style: none"><input type="checkbox"> , [ 1, “2”, 3 ] (arrays)</li>
+<li>{ }, { a: 42 } (objects)</li>
+<li>function foo() { .. } (functions)</li>
+</ul>
+<h3 id="Function-Scopes"><a href="#Function-Scopes" class="headerlink" title="Function Scopes"></a>Function Scopes</h3><h4 id="Hoisting"><a href="#Hoisting" class="headerlink" title="Hoisting"></a>Hoisting</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">foo();					<span class="comment">// works because `foo()`</span></span><br><span class="line">						<span class="comment">// declaration is "hoisted"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	a = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log( a );	<span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> a;				<span class="comment">// declaration is "hoisted"</span></span><br><span class="line">						<span class="comment">// to the top of `foo()`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );	<span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="Nested-Scopes"><a href="#Nested-Scopes" class="headerlink" title="Nested Scopes"></a>Nested Scopes</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> c = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">console</span>.log( a, b, c );	<span class="comment">// 1 2 3</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		baz();</span><br><span class="line">		<span class="built_in">console</span>.log( a, b );		<span class="comment">// 1 2</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	bar();</span><br><span class="line">	<span class="built_in">console</span>.log( a );				<span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p>Notice that <code>c</code> is not available inside of <code>bar()</code>, because it’s declared only inside the inner <code>baz()</code> scope, and that <code>b</code> is not available to <code>foo()</code> for the same reason.</p>
+<p>ES6 lets you declare variables to belong to individual blocks (pairs of <code>{ .. }</code>), using the <code>let</code> keyword</p>
+<h3 id="Immediately-Invoked-Function-Expressions-IIFEs"><a href="#Immediately-Invoked-Function-Expressions-IIFEs" class="headerlink" title="Immediately Invoked Function Expressions (IIFEs)"></a>Immediately Invoked Function Expressions (IIFEs)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log( <span class="string">"Hello!"</span> );</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// "Hello!"</span></span><br></pre></td></tr></table></figure>
+<p>The outer <code>( .. )</code> that surrounds the <code>(function IIFE(){ .. })</code> function expression is just a nuance of JS grammar needed to prevent it from being treated as a normal function declaration.</p>
+<p>The final <code>()</code> on the end of the expression – the <code>})();</code> line – is what actually executes the function expression referenced immediately before it.</p>
+<p>Because an IIFE is just a function, and functions create variable scope, using an IIFE in this fashion is often used to declare variables that won’t affect the surrounding code outside the IIFE:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">42</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">console</span>.log( a );	<span class="comment">// 10</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );		<span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+<p>IIFEs can also have return values:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = (<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">42</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">x;	<span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+<h3 id="Closure"><a href="#Closure" class="headerlink" title="Closure"></a>Closure</h3><p>You can think of closure as a way to “remember” and continue to access a function’s scope (its variables) even once the function has finished running.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeAdder</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// parameter `x` is an inner variable</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// inner function `add()` uses `x`, so</span></span><br><span class="line">	<span class="comment">// it has a "closure" over it</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">y</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> y + x;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> add;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `plusOne` gets a reference to the inner `add(..)`</span></span><br><span class="line"><span class="comment">// function with closure over the `x` parameter of</span></span><br><span class="line"><span class="comment">// the outer `makeAdder(..)`</span></span><br><span class="line"><span class="keyword">var</span> plusOne = makeAdder( <span class="number">1</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// `plusTen` gets a reference to the inner `add(..)`</span></span><br><span class="line"><span class="comment">// function with closure over the `x` parameter of</span></span><br><span class="line"><span class="comment">// the outer `makeAdder(..)`</span></span><br><span class="line"><span class="keyword">var</span> plusTen = makeAdder( <span class="number">10</span> );</span><br><span class="line"></span><br><span class="line">plusOne( <span class="number">3</span> );        <span class="comment">// 4  &lt;-- 1 + 3</span></span><br><span class="line">plusOne( <span class="number">41</span> );        <span class="comment">// 42 &lt;-- 1 + 41</span></span><br><span class="line"></span><br><span class="line">plusTen( <span class="number">13</span> );        <span class="comment">// 23 &lt;-- 10 + 13</span></span><br></pre></td></tr></table></figure>
+<p>More on how this code works:</p>
+<ol>
+<li>When we call <code>makeAdder(1)</code>, we get back a reference to its inner <code>add(..)</code> that remembers <code>x</code> as <code>1</code>. We call this function reference <code>plusOne(..)</code>.</li>
+<li>When we call <code>makeAdder(10)</code>, we get back another reference to its inner <code>add(..)</code> that remembers <code>x</code> as <code>10</code>. We call this function reference <code>plusTen(..)</code>.</li>
+<li>When we call <code>plusOne(3)</code>, it adds <code>3</code> (its inner <code>y</code>) to the <code>1</code> (remembered by <code>x</code>), and we get <code>4</code> as the result.</li>
+<li>When we call <code>plusTen(13)</code>, it adds <code>13</code> (its inner <code>y</code>) to the <code>10</code> (remembered by <code>x</code>), and we get <code>23</code> as the result.</li>
+</ol>
+<h3 id="this-Identifier"><a href="#this-Identifier" class="headerlink" title="this Identifier"></a><code>this</code> Identifier</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log( <span class="keyword">this</span>.bar );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = <span class="string">"global"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	bar: <span class="string">"obj1"</span>,</span><br><span class="line">	foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">	bar: <span class="string">"obj2"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --------</span></span><br><span class="line"></span><br><span class="line">foo();				<span class="comment">// "global"</span></span><br><span class="line">obj1.foo();			<span class="comment">// "obj1"</span></span><br><span class="line">foo.call( obj2 );		<span class="comment">// "obj2"</span></span><br><span class="line"><span class="keyword">new</span> foo();			<span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>There are four rules for how <code>this</code> gets set, and they’re shown in those last four lines of that snippet.</p>
+<ol>
+<li><code>foo()</code> ends up setting <code>this</code> to the global object in non-strict mode – in strict mode, <code>this</code> would be <code>undefined</code> and you’d get an error in accessing the <code>bar</code> property – so <code>&quot;global&quot;</code> is the value found for <code>this.bar</code>.</li>
+<li><code>obj1.foo()</code> sets <code>this</code> to the <code>obj1</code> object.</li>
+<li><code>foo.call(obj2)</code> sets <code>this</code> to the <code>obj2</code> object.</li>
+<li><code>new foo()</code> sets <code>this</code> to a brand new empty object.</li>
+</ol>
+<h3 id="Prototypes"><a href="#Prototypes" class="headerlink" title="Prototypes"></a>Prototypes</h3><p>When you reference a property on an object, if that property doesn’t exist, JavaScript will automatically use that object’s internal prototype reference to find another object to look for the property on. You could think of this almost as a fallback if the property is missing.</p>
+<p>The internal prototype reference linkage from one object to its fallback happens at the time the object is created. The simplest way to illustrate it is with a built-in utility called <code>Object.create(..)</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">	a: <span class="number">42</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create `bar` and link it to `foo`</span></span><br><span class="line"><span class="keyword">var</span> bar = <span class="built_in">Object</span>.create( foo );</span><br><span class="line"></span><br><span class="line">bar.b = <span class="string">"hello world"</span>;</span><br><span class="line"></span><br><span class="line">bar.b;		<span class="comment">// "hello world"</span></span><br><span class="line">bar.a;		<span class="comment">// 42 &lt;-- delegated to `foo`</span></span><br></pre></td></tr></table></figure>
+<p>The <code>a</code> property doesn’t actually exist on the <code>bar</code> object, but because <code>bar</code> is prototype-linked to <code>foo</code>, JavaScript automatically falls back to looking for <code>a</code> on the <code>foo</code> object, where it’s found.</p>
+<h3 id="Polyfilling"><a href="#Polyfilling" class="headerlink" title="Polyfilling"></a>Polyfilling</h3><p>ES6 defines a utility called <code>Number.isNaN(..)</code> to provide an accurate non-buggy check for <code>NaN</code> values</p>
+<h3 id="Transpiling"><a href="#Transpiling" class="headerlink" title="Transpiling"></a>Transpiling</h3><p>Here’s a quick example of transpiling. ES6 adds a feature called “default parameter values.”</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a = <span class="number">2</span></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log( a );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();		<span class="comment">// 2</span></span><br><span class="line">foo( <span class="number">42</span> );	<span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

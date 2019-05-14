@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        &lt;koa和node.js开发实战&gt;笔记 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2"><span class="toc-text">2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Context对象"><span class="toc-text">2.2 Context对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ctx-request"><span class="toc-text">ctx.request</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctx-response"><span class="toc-text">ctx.response</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctx-state"><span class="toc-text">ctx.state</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctx-cookies"><span class="toc-text">ctx.cookies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctx-throw"><span class="toc-text">ctx.throw</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Koa的中间件"><span class="toc-text">2.3 Koa的中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用-Koa-中间件"><span class="toc-text">常用 Koa 中间件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-路由"><span class="toc-text">3 路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-规范"><span class="toc-text">RESTful 规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#命名路由"><span class="toc-text">命名路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#嵌套路由"><span class="toc-text">嵌套路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#路由前缀"><span class="toc-text">路由前缀</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#URL参数"><span class="toc-text">URL参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过-koa-router实现接口的权限控制"><span class="toc-text">通过 koa-router实现接口的权限控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-HTTP"><span class="toc-text">4 HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#URI-和-URL"><span class="toc-text">URI 和 URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的-HTTP-状态码"><span class="toc-text">常用的 HTTP 状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的请求方法"><span class="toc-text">常用的请求方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的-HTTP-首部字段"><span class="toc-text">常用的 HTTP 首部字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-构建-Koa-Web-应用"><span class="toc-text">5 构建 Koa Web 应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Koa-中实现-MVC"><span class="toc-text">在 Koa 中实现 MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分离Router"><span class="toc-text">分离Router</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分离-controller"><span class="toc-text">分离 controller</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分离-Service"><span class="toc-text">分离 Service</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板引擎"><span class="toc-text">模板引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源"><span class="toc-text">静态资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他常用开发技巧"><span class="toc-text">其他常用开发技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#koa-json"><span class="toc-text">koa-json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-koa-multer-中间件实现文件上传"><span class="toc-text">使用 koa-multer 中间件实现文件上传</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-数据库"><span class="toc-text">6 数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在Koa中应用MySQL数据库"><span class="toc-text">在Koa中应用MySQL数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查询"><span class="toc-text">查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Koa-中应用-MongoDB-数据库"><span class="toc-text">在 Koa 中应用 MongoDB 数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Koa中应用Redis数据库"><span class="toc-text">在Koa中应用Redis数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-单元测试"><span class="toc-text">7 单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-优化与部署"><span class="toc-text">8 优化与部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#日志"><span class="toc-text">日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        &lt;koa和node.js开发实战&gt;笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-04-25 15:16:52</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#koa" title="koa">koa</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><h3 id="2-2-Context对象"><a href="#2-2-Context对象" class="headerlink" title="2.2 Context对象"></a>2.2 Context对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  ctx; <span class="comment">// 这是 Context</span></span><br><span class="line">  ctx .request; <span class="comment">//这是 Koa Request</span></span><br><span class="line">  ctx.response; <span class="comment">//这是 Koa Response</span></span><br><span class="line">  <span class="keyword">this</span>; <span class="comment">//这也是 Context</span></span><br><span class="line">  <span class="keyword">this</span>.request; <span class="comment">//这也是 Koa Request</span></span><br><span class="line">  <span class="keyword">this</span> .response; <span class="comment">//这也是 Koa Response</span></span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<h4 id="ctx-request"><a href="#ctx-request" class="headerlink" title="ctx.request"></a>ctx.request</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ctx.response.body = &#123;</span><br><span class="line">  url: ctx. request. url, <span class="comment">//获取请求 URL</span></span><br><span class="line">  query: ctx.request.query, <span class="comment">//获取解析的查询字符串</span></span><br><span class="line">  querystring : ctx.request.querystring <span class="comment">//获取原始查询字符串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>随后在浏览器中访问 <code>http://localhost:3000/?search=koa&amp;keywords=context</code>，便可以看到 一串字符串，如下所示 :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">'url'</span>:<span class="string">'/?search=koa&amp;keywords=context'</span>,</span><br><span class="line">  <span class="string">'query'</span> : &#123; <span class="string">'search'</span> : <span class="string">'koa'</span>, <span class="string">'keywords'</span> : <span class="string">'context'</span> &#125; ,</span><br><span class="line">  <span class="string">'querystring'</span>:<span class="string">'search=koa&amp;keywords=context'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>POST请求的参数获取方式和 GET请求不同. </p>
+<p>Koa没有封装获取 POST请求参数的方 法，因此需要解析 Context 中的原生 Node.js请求对象 req, 或者使用 <code>koa-bodyparser</code>中间件</p>
+<h4 id="ctx-response"><a href="#ctx-response" class="headerlink" title="ctx.response"></a>ctx.response</h4><p>在实际开发中， 除设置一个请求的响应主体外， 往往还需要通过 <code>ctx.response.status</code> 设置请求状态，如 200, 404, 500 等。</p>
+<p>通过 <code>ctx.response.type</code> 可以设置响应的 <code>Content-Type</code>, 如果响应内 容是 HTML 格式，则设置为 <code>ctx.response.type =&#39;html&#39;</code>;如果响应内容是一张 png 图片，则设置为 <code>ctx.response句pe =&#39;1mage/png&#39;</code>。显式地设置 <code>Content-Type</code>是因为浏览器默认 的 <code>Content-Type</code> 是 <code>text/plain</code>，如果 <code>Content-Type</code> 不对会发生解析错误。</p>
+<p>通过<code>ctx.request.accepts()</code>函数来判断客户端期望的数据类型</p>
+<p>通过 <code>ctx.response.body</code> 设置响应体内容</p>
+<p>和 <code>ctx.request.accepts()</code>类似的一个方法是 <code>ctx.response.is(types...)</code>，它可以用来检查响应类型是否是所提供的类型之一，这对创建操纵响应的中间件特别有用 。</p>
+<p>还有一个比较常用的方法是 <code>ctx.response.redirect(url, [alt])</code>，这个方法用于将状态码 302 重定 向到 URL，例如用 户登录后自动重定向到网站的首页。</p>
+<h4 id="ctx-state"><a href="#ctx-state" class="headerlink" title="ctx.state"></a>ctx.state</h4><p><code>ctx.state</code> 是推荐 的命名空间，用于通过中间件传递信息和前端视图。类似 koa-views 这 些渲染 View层的中间件也会默认把 ctx.state里面的属性作为 View 的上下文传入。</p>
+<h4 id="ctx-cookies"><a href="#ctx-cookies" class="headerlink" title="ctx.cookies"></a>ctx.cookies</h4><p>ctx.cookies 用于获取和设置 Cookie</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctx.cookies.get(name, [optionsJ); <span class="comment">//获取Cookie</span></span><br><span class="line">ctx.cookies.set(name, value, [options]); <span class="comment">// 设置Cookie</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/alex6liu/blog-images/master/koa/ctx.cookie.options.png" alt></p>
+<h4 id="ctx-throw"><a href="#ctx-throw" class="headerlink" title="ctx.throw"></a>ctx.throw</h4><p>ctx.throw用于抛出错误，把错误信息返回给用户， 代码示例如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">  ctx.throw(<span class="number">500</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Koa的中间件"><a href="#2-3-Koa的中间件" class="headerlink" title="2.3 Koa的中间件"></a>2.3 Koa的中间件</h3><p>通过 app.use()函数来加载中间件。</p>
+<p>中间件函数是一个带有 ctx 和 next 两个参数的简单函数。</p>
+<p>ctx 就是之前章节介绍的上下文，封装了 Request 和 Response 等对象; next 用于把中间件的执行权交给下游的中间件。 在 next()之前使用 await 关键字是因为 next()会返回一个 Promise 对象，而在当前中间件中位 于 next()之后的代码会暂停执行，直到最后一个中间件执行完毕后，再自下而上依次执行每 个中间件中 next()之后的代码，类似于一种先进后出的堆枝结构。</p>
+<p><img src="https://raw.githubusercontent.com/alex6liu/blog-images/master/koa/onion.png" alt></p>
+<p>下面通过具体代码来演示中间件的执行，如下所示:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">app.use (<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'one start'</span>);</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'one end'</span>);</span><br><span class="line">));</span><br><span class="line">app.use (<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'two start'</span>);</span><br><span class="line">  ctx.body = <span class="string">'two'</span>;</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'two end'</span>);</span><br><span class="line">)&#125;;</span><br><span class="line">app.use (<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'three start'</span>);</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'three end'</span>);</span><br><span class="line">)&#125;;</span><br></pre></td></tr></table></figure>
+<p>这段代码中有 3个中间件， 执行结果如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">one start</span><br><span class="line">two start</span><br><span class="line">three start</span><br><span class="line">three end</span><br><span class="line">two end</span><br><span class="line">one end</span><br></pre></td></tr></table></figure>
+<p>如果想将多个中间件组合成一个单一的中间件, 便于重用或导出，可以使用<code>koa-compose</code>，代码如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> all = compose ([middlewarel, middleware2, middleware3]);</span><br><span class="line">app.use(all);</span><br></pre></td></tr></table></figure>
+<p>如果一个中间件没有调用 <code>await next()</code>，又会发生什么情况呢? 答案是:后面的中间件将不会被执行。</p>
+<h4 id="常用-Koa-中间件"><a href="#常用-Koa-中间件" class="headerlink" title="常用 Koa 中间件"></a>常用 Koa 中间件</h4><ul>
+<li>koa-bodyparser</li>
+<li>koa-router</li>
+<li>koa-static</li>
+<li>koa-views</li>
+</ul>
+<h2 id="3-路由"><a href="#3-路由" class="headerlink" title="3 路由"></a>3 路由</h2><p>前端路由主要解决了两个问题:在页面不刷新的前提下实现 URL 的变化，以及捕捉URL的变化并执行相应的页面逻辑。</p>
+<h3 id="RESTful-规范"><a href="#RESTful-规范" class="headerlink" title="RESTful 规范"></a>RESTful 规范</h3><p>REST 的全称是 Representational State Transfer，即表现层状态转移.</p>
+<p>REST设计一般符合以下条件:</p>
+<ul>
+<li>程序或应用的事物都应该被抽象为资源。</li>
+<li>每个资源对应唯一的URI。(URI的全称是 UniformResource Identifier，即统一资源标识符，是一个用于标识某一互联网资源名称的字符串)</li>
+<li>使用统一的接口对资源进行操作。</li>
+<li>对资源的各种操作不会改变资源标识。</li>
+<li>所有的操作都是无状态的。</li>
+</ul>
+<p>在该场景中，需要完成对网站用户的新增、修改、删除和查看操作。在非RESTful架构中，一般被设计为如下所示:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.test.com/addUser // POST方法，请求发送新增用户信息</span></span><br><span class="line">https:<span class="comment">//api.test.com/deleteUser //POST方法，请求发送用户的 ID</span></span><br></pre></td></tr></table></figure>
+<p>而基于RESTful架构设计的 API，全局只提供唯一的URI: <code>https://api.test.com/users</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//api.test.com/users // POST方法， 请求发送新增用户信息</span></span><br><span class="line">https:<span class="comment">//api.test.com/users/:id // DELETE方法，用户ID是URI的一部分</span></span><br><span class="line">https:<span class="comment">//api.test.com/users/:id // PUT方法，请求发送用户的信息, ID是 URI 的一部分</span></span><br><span class="line">https:<span class="comment">//api.test.com/users/:id // GET方法，用户 ID是 URI 的一部分</span></span><br></pre></td></tr></table></figure>
+<p>GitHub的API设计被称为RESTful API教科书的典范，地址为<code>https://developer.github.com/v3/</code>。 同时，不得不提的是 GitHub v4 的 API 使用了全新的设计风格 GraphQL ，地址为 <code>https://developer.github.com/v4/</code>。 GraphQL 提供了一套完整描述，使客户端能够没有任何冗余地准确获得需要的数据。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>如果一条路由请求在 all()方法和其他方法中同时命中， 只有执行了 <code>await next()</code>，这条路由请求才会在 all()方法和其他方法中都起作用</p>
+<p>在项目中， all()方法一般用来设置请求头，如设置过期时间、CORS (Cross-Origin Resource Sharing ，跨域资源共享)等，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过调用路由的名称 user，生成路由==”/users/3”</span></span><br><span class="line">router.url(<span class="string">'url'</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//通过调用路由的名称user，生成路由== ”/users/3”</span></span><br><span class="line">router.url(<span class="string">'user'</span>, &#123; <span class="attr">id</span>: <span class="number">3</span> ));</span><br></pre></td></tr></table></figure>
+<h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h4><p>使用 <code>router.url()</code>方法可以在代码中根据路由名称和参数(可选)生成具体的 URL，而不用采用宇符串拼接的方式去生成 URL。</p>
+<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> forums = <span class="keyword">new</span> Router ();</span><br><span class="line"><span class="keyword">const</span> posts = <span class="keyword">new</span> Router ();</span><br><span class="line">posts.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;...&#125;);</span><br><span class="line">posts.get(<span class="string">'/:pid'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;... &#125;);</span><br><span class="line">forums.use(<span class="string">'/forums/:fid/posts'</span>, posts.routes(), posts.allowedMethods());</span><br><span class="line"><span class="comment">//获取互联网版块列表的接口</span></span><br><span class="line"><span class="comment">// ”/forums/:fid/posts”=&gt;”/forums/123/posts”</span></span><br><span class="line"><span class="comment">//获取互联网版块下某篇文章的接口</span></span><br><span class="line"><span class="comment">// ”/forums/:fid/posts/:pid”=&gt; ”/forums/123/posts/123”</span></span><br><span class="line">app.use(forums.routes());</span><br></pre></td></tr></table></figure>
+<h4 id="路由前缀"><a href="#路由前缀" class="headerlink" title="路由前缀"></a>路由前缀</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> Router (&#123;</span><br><span class="line">  prefix:<span class="string">'/users'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//匹配路由”/users”</span></span><br><span class="line">router.get(<span class="string">'/'</span>,...);</span><br><span class="line"><span class="comment">//匹配路由” /users/:id”</span></span><br><span class="line">router.get(<span class="string">'/:id'</span>,...);</span><br></pre></td></tr></table></figure>
+<h4 id="URL参数"><a href="#URL参数" class="headerlink" title="URL参数"></a>URL参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/:category/:title'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 响应请求'/programming/how-to-koa'</span></span><br><span class="line">  <span class="built_in">console</span>.log(ctx .params);</span><br><span class="line">  <span class="comment">//参数解析=&gt; ( category: 'programming', title:'how-to-koa')</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="通过-koa-router实现接口的权限控制"><a href="#通过-koa-router实现接口的权限控制" class="headerlink" title="通过 koa-router实现接口的权限控制"></a>通过 koa-router实现接口的权限控制</h3><p>常见鉴别用户权限的方式有两种，一种是广泛使用的 <code>Cookie-Based Authentication</code> (基于 Cookie 的认证模式)，另一种是 <code>Token-Based Authentication</code> (基于 Token 的认证模式) 。</p>
+<p>本案例采用 Token 方式认证。 </p>
+<p>Token 方式最大的 优点在于采用了无状态机制，在此基础上，可以实现天然的跨域支持、前后端分离等，同时降低了服务端开发和维护的成本 。</p>
+<p>Token 方式的缺点在于服务器每次都需要对 Token 进行校验，这一步骤会对服务器产生运算压力 。 </p>
+<p>另一方面，无状态 API 缺乏对用户流程或异常的控制，为了避免出现一些例如回放攻击的异常情况，应该设置较短的过期时间，且需要对密钥进行严格的保护 。对于具有复杂流程的高危场景(如支付等〉， 则要谨慎选择 Token 认证模式 。</p>
+<p>在本案例中，选用 jsonwebtoken (以下简称 JWT)来实现 Token 的生成、校验和解码。Token 的中间件实现选择 <code>koa-jwt</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> Router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; sign &#125; = <span class="built_in">require</span>(<span class="string">'jsonwebtoken'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; secret &#125; = <span class="built_in">require</span>(<span class="string">'./config'</span>);</span><br><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">'koa-jwt'</span>)(&#123; secret &#125;);</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> Router();</span><br><span class="line"><span class="keyword">const</span> detail = <span class="keyword">new</span> Router();</span><br><span class="line">app.use(bodyParser());</span><br><span class="line"></span><br><span class="line">router</span><br><span class="line">  .post(<span class="string">'/api/login'</span>, <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> user = ctx.request.body;</span><br><span class="line">    <span class="keyword">if</span> (user &amp;&amp; user.username) &#123;</span><br><span class="line">      <span class="keyword">let</span> &#123; username &#125; = user;</span><br><span class="line">      <span class="keyword">const</span> token = sign(&#123; username &#125;, secret, &#123; <span class="attr">expiresIn</span>: <span class="string">'1h'</span> &#125;);</span><br><span class="line">      ctx.body = &#123;</span><br><span class="line">        message: <span class="string">'Get Token Success'</span>,</span><br><span class="line">        code: <span class="number">1</span>,</span><br><span class="line">        token</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      ctx.body = &#123;</span><br><span class="line">        message: <span class="string">'Param Error'</span>,</span><br><span class="line">        code: <span class="number">-1</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .get(<span class="string">'/api/userInfo'</span>, jwt, <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">    ctx.body = &#123;</span><br><span class="line">      username: ctx.state.user.username</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)</span><br><span class="line">  .get(<span class="string">'/api/adminInfo'</span>, jwt, admin, <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">    ctx.body = &#123;</span><br><span class="line">      username: ctx.state.user.username</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(router.routes()).use(router.allowedMethods());</span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'app listening 3000...'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>middleware/admin</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (ctx.state.user.username === <span class="string">'admin'</span>) &#123;</span><br><span class="line">      next()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      ctx.body = &#123;</span><br><span class="line">        code: <span class="number">-1</span>,</span><br><span class="line">        message: <span class="string">'Authentication Error'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-HTTP"><a href="#4-HTTP" class="headerlink" title="4 HTTP"></a>4 HTTP</h2><h3 id="URI-和-URL"><a href="#URI-和-URL" class="headerlink" title="URI 和 URL"></a>URI 和 URL</h3><ul>
+<li>URI: Uniform Resource Identifier (统一资源标识符)</li>
+<li>URL: Uniform Resource Locator (统一资源定位符〉</li>
+</ul>
+<p>URL 是 URI的一个子集</p>
+<p>一个完整的 URL 一般由7个部分组成，如下所示:</p>
+<p><code>scheme: [// [user [:password]@] host[:port]] [/path] [?query] [#fragment]</code></p>
+<ul>
+<li>scheme:使用的协议，如 FTP (File Transfer Protocol)、 HTTP 等 。</li>
+<li>user[:password]: 表示访问资源的用户名和密码，常见于 FTP 协议中 。</li>
+<li>host:主机，如 IP 地址或域名。</li>
+<li>port:端口号，如 HTTP 默认为 80 端口 。</li>
+<li>path:访问资源的路径。</li>
+<li>query: 请求数据，以“?”开头。</li>
+<li>fragment: 定位锚点，以“#”开头，可用于快速定位网页对应的段落。</li>
+</ul>
+<h3 id="常用的-HTTP-状态码"><a href="#常用的-HTTP-状态码" class="headerlink" title="常用的 HTTP 状态码"></a>常用的 HTTP 状态码</h3><p>HTTP 状态码主要包括 1<strong> (消息)、 2</strong>(成功)、 3<strong>(重定向)、 4</strong>(请求错误〉、 5<strong> 和 6</strong> (服务器错误)</p>
+<p><img src="https://raw.githubusercontent.com/alex6liu/blog-images/master/http/http.statuscode.png" alt></p>
+<h3 id="常用的请求方法"><a href="#常用的请求方法" class="headerlink" title="常用的请求方法"></a>常用的请求方法</h3><p><img src="https://raw.githubusercontent.com/alex6liu/blog-images/master/http/http.request.png" alt></p>
+<h3 id="常用的-HTTP-首部字段"><a href="#常用的-HTTP-首部字段" class="headerlink" title="常用的 HTTP 首部字段"></a>常用的 HTTP 首部字段</h3><p><img src="https://raw.githubusercontent.com/alex6liu/blog-images/master/http/http.header.png" alt></p>
+<h2 id="5-构建-Koa-Web-应用"><a href="#5-构建-Koa-Web-应用" class="headerlink" title="5 构建 Koa Web 应用"></a>5 构建 Koa Web 应用</h2><p>MVC 全名是 Model View Controller，即模型、视图、 控制器。</p>
+<ul>
+<li>Model: 负责数据访问</li>
+<li>Controller: 负责处理消息</li>
+<li>View: 负责显示数据</li>
+</ul>
+<p>三层架构( 3-TierArchitecture )是一个分层式的架构设计理念，如有必要，也可以分为多层。</p>
+<p>分层的设计理念契合了“高内聚低藕合” 的思想，在软件体系架构设计中是最常见、也是最重要的一种结构。</p>
+<p>通常意义上的三层架构是将整个业务应用划分为 界面层( User Interface Layer)、业务逻辑层( Business Logic Layer)、数据访问层( Data Access Layer)</p>
+<h3 id="在-Koa-中实现-MVC"><a href="#在-Koa-中实现-MVC" class="headerlink" title="在 Koa 中实现 MVC"></a>在 Koa 中实现 MVC</h3><h4 id="分离Router"><a href="#分离Router" class="headerlink" title="分离Router"></a>分离Router</h4><p>路由部分的代码可以分离成独立的文件，并根据项目结构放置在适当的位置，方便管理。本示例中，将路由部分的代码独立在 router.js文件中，并置于项目根目录下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">|-- app.js</span><br><span class="line">|-- router.js</span><br></pre></td></tr></table></figure>
+<p>router.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>)();</span><br><span class="line"><span class="keyword">const</span> HomeController = <span class="built_in">require</span>(<span class="string">'./controller/home'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">app</span>) =&gt;</span> &#123;</span><br><span class="line">  router.get(<span class="string">'/'</span>, HomeController.index);</span><br><span class="line">  router.get(<span class="string">'/home'</span>, HomeController.home);</span><br><span class="line">  router.get(<span class="string">'/home/:id/:name'</span>, HomeController.homeParams);</span><br><span class="line">  router.get(<span class="string">'/user'</span>, HomeController.login);</span><br><span class="line">  router.post(<span class="string">'/user/register'</span>, HomeController.register);</span><br><span class="line">  app.use(router.routes()).use(router.allowedMethods());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'./router'</span>);</span><br><span class="line">app.use(bodyParser());</span><br><span class="line">router(app);</span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server is running at http://localhost:3000'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="分离-controller"><a href="#分离-controller" class="headerlink" title="分离 controller"></a>分离 controller</h4><p>controller 负责存放响应 HTPP 请求的业务逻辑代码</p>
+<p>controller/home.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HomeService = <span class="built_in">require</span>(<span class="string">'../service/home'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    index: <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        ctx.response.body = <span class="string">`&lt;h1&gt;index page&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    home: <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(ctx.request.query);</span><br><span class="line">        <span class="built_in">console</span>.log(ctx.request.querystring);</span><br><span class="line">        ctx.response.body = <span class="string">'&lt;h1&gt;HOME page&lt;/h1&gt;'</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    homeParams: <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(ctx.params);</span><br><span class="line">        ctx.response.body = <span class="string">'&lt;h1&gt;HOME page /:id/:name&lt;/h1&gt;'</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    login: <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        ctx.response.body = <span class="string">`&lt;form action="/user/register" method="post"&gt;</span></span><br><span class="line"><span class="string">              &lt;input name="name" type="text" placeholder="请输入用户名：ikcamp"/&gt; </span></span><br><span class="line"><span class="string">              &lt;br/&gt;</span></span><br><span class="line"><span class="string">              &lt;input name="password" type="text" placeholder="请输入密码：123456"/&gt;</span></span><br><span class="line"><span class="string">              &lt;br/&gt; </span></span><br><span class="line"><span class="string">              &lt;button&gt;GoGoGo&lt;/button&gt;</span></span><br><span class="line"><span class="string">            &lt;/form&gt;`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    register: <span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> &#123;name,password&#125; = ctx.request.body;</span><br><span class="line">        <span class="keyword">let</span> data = <span class="keyword">await</span> HomeService.register(name, password);</span><br><span class="line">        ctx.response.body = data;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>业务层的代码分离成功之后，需要修改 router.js文件，在文件中引入 controller/home.js, 并以 home.js 中的函数作为 HTTP 请求的响应函数</p>
+<p><strong>注意: 上面的router.js代码是分离后的</strong></p>
+<p>在实际开发中，有时 Node.js 需要进行一些数据访问层的操作，如操作数据库、调用第三方接口获取数据等，因此需要分离出 Service 层来进行相应处理 。相应地，Controller 只需要进行业务逻辑部分的处理即可。</p>
+<h4 id="分离-Service"><a href="#分离-Service" class="headerlink" title="分离 Service"></a>分离 Service</h4><p>service/home.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    register: <span class="keyword">async</span> (name, pwd) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> data;</span><br><span class="line">        <span class="keyword">if</span> (name == <span class="string">'ikcamp'</span> &amp;&amp; pwd == <span class="string">'123456'</span>) &#123;</span><br><span class="line">            data = <span class="string">`Hello， <span class="subst">$&#123;name&#125;</span>！`</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            data = <span class="string">'账号信息错误'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意: 上面的 controller/home.js 代码也是分离后的</strong></p>
+<p>至此，项目代码已经完成了基本的结构分离，得到的模块包括单独处理 HTTP 请求的路由文件 router.js、对 HTTP 请求进行响应的 Controller 文件，以及为 Controller 提供 Model 数据的 Service 文件。</p>
+<h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><p>目前，可以在 Node.js 中应用且比较成熟的模板引擎有很多，例如 EJS、 Jade (现己改 名为 Pug)、 Handlebars、 Nunjucks、 Swig等</p>
+<p>根据自己的需求选择合适的模板引擎</p>
+<p><code>koa-views</code></p>
+<h3 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h3><p>在访问站点时，浏览器会接收到各种资源，常见的有 HTML、 JavaScript脚本文件、 css 样式表、 GIF 图片资源和 Flash</p>
+<p>那么浏览器是通过什么方式区分不同的资源类型， 又是如何决定以什么形式来显示的呢?</p>
+<p>答案是根据 MIMEType，也就是该资源的媒体类型。</p>
+<p><img src="https://raw.githubusercontent.com/alex6liu/blog-images/master/http/mime-type.png" alt></p>
+<p><code>koa-static</code></p>
+<h3 id="其他常用开发技巧"><a href="#其他常用开发技巧" class="headerlink" title="其他常用开发技巧"></a>其他常用开发技巧</h3><h4 id="koa-json"><a href="#koa-json" class="headerlink" title="koa-json"></a><code>koa-json</code></h4><h4 id="使用-koa-multer-中间件实现文件上传"><a href="#使用-koa-multer-中间件实现文件上传" class="headerlink" title="使用 koa-multer 中间件实现文件上传"></a>使用 koa-multer 中间件实现文件上传</h4><p><strong>注意: Multer 不会处理任何非 multipart/form-data 类型的表单数据</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">canst koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> multer = <span class="built_in">require</span> ( <span class="string">'koa-multer'</span> );</span><br><span class="line"><span class="keyword">const</span> app = koa();</span><br><span class="line">app.use(multer(&#123;<span class="attr">dest</span> : <span class="string">'./uploads/'</span>&#125;));</span><br><span class="line">app.listen(<span class="number">3000</span>) ;</span><br></pre></td></tr></table></figure>
+<h2 id="6-数据库"><a href="#6-数据库" class="headerlink" title="6 数据库"></a>6 数据库</h2><h3 id="在Koa中应用MySQL数据库"><a href="#在Koa中应用MySQL数据库" class="headerlink" title="在Koa中应用MySQL数据库"></a>在Koa中应用MySQL数据库</h3><p>在 Node.js 中， 一般采用 Sequelize 这个 ORM 类库来操作数据库。 Sequelize 支持多种数据库，如 PostgreSQL、 MySQL、 SQLite和 MSSQL。</p>
+<p><code>npm install sequelize -save</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">const</span> sequelize = <span class="keyword">new</span> Sequelize(<span class="string">'databaseName'</span>，<span class="string">'userName勺'</span> <span class="string">'password'</span>，&#123;</span><br><span class="line">  host : <span class="string">'localhost'</span>,</span><br><span class="line">  dialect : <span class="string">'mysql'</span></span><br><span class="line">&#125;&#125;;</span><br><span class="line">sequelize.authenticate().then (<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Connected'</span>);</span><br><span class="line">  &#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error (<span class="string">'Connect failed'</span>);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>提示:由于建立数据库连接存在成本，所以通常情况下会通过连接池来提升数据库的连接效率，以避免每次执行数据库操作时重复建立连接。Sequelize默认支持连接池，可以在创建连接时指定 pool 参数来修改默认的连接池设置。</p>
+<p>通过 Sequelize，我们可以直接定义数据模型来创建数据表，而不必去数据库中使用 SQL 脚本创建。可以通过 define 方法定义模型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Categoty = sequelize.define(<span class="string">'category'</span>, &#123;</span><br><span class="line">  id : Sequelize.UUID,</span><br><span class="line">  name: Sequelize.STRING</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Project = sequelize.define(<span class="string">'project'</span>,&#123; <span class="comment">// 定义Project模型</span></span><br><span class="line">  name: &#123;</span><br><span class="line">    type: Sequelize.STRING,</span><br><span class="line">    allowNull: <span class="literal">false</span>,</span><br><span class="line">    unique : <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  date: &#123;</span><br><span class="line">    type : Sequelize.DATE,</span><br><span class="line">    defaultValue: Sequelize.NOW</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Sequelize 会默认为创建的数据表自动创建 createdAt 和 updatedAt 字段。同时，Sequelize 也提供了配置项来禁用或修改这些字段</p>
+<p>在定义模型时，也可以为字段定义 Getter和 Setter， 定义写入数据的规则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Custom = sequelize.define(<span class="string">'custom'</span>, &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type : Sequelize .STRING,</span><br><span class="line">    <span class="keyword">get</span> () &#123; <span class="comment">//定义 Getter，可以自定义获取数据</span></span><br><span class="line">      <span class="keyword">const</span> title = <span class="keyword">this</span>.getDataValue(<span class="string">'title'</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.getDataValue(<span class="string">'name'</span>)&#125;</span> (<span class="subst">$&#123;title&#125;</span>)`</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  title : &#123;</span><br><span class="line">    title : Sequelize.STRING,</span><br><span class="line">    <span class="keyword">set</span> (val) &#123; <span class="comment">//定义 Setter，可以在写入数据前处理数据</span></span><br><span class="line">      <span class="keyword">this</span>.setDataValue(<span class="string">'title'</span>, val.toUpperCase())</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h4><p>可以通过 sync 方法将定义的模型同步到数据库中。既可以同步单个表，也可以同步全部表 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sequelize.sync().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="comment">//同步全部模型</span></span><br><span class="line">  <span class="comment">// done</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// some error thrown</span></span><br><span class="line">&#125;)</span><br><span class="line">Product.sync() <span class="comment">//同步单个数据表</span></span><br><span class="line">Project.sync(&#123; <span class="attr">force</span>: <span class="literal">true</span> &#125;) <span class="comment">//强制同步，当数据库中已经存在表时，清除已经存在的表</span></span><br></pre></td></tr></table></figure>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> Product.findAll(); <span class="comment">// 查出 Product表中的所有数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> Project.findAll(&#123; <span class="comment">// 查询 name和 date字段</span></span><br><span class="line">  attributes: [<span class="string">'name'</span>, <span class="string">'date'</span>]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; Op &#125; = <span class="built_in">require</span>( <span class="string">'sequelize'</span> );</span><br><span class="line"><span class="keyword">await</span> Project.findAll(&#123;</span><br><span class="line">  where: &#123;</span><br><span class="line">    name: &#123;</span><br><span class="line">      [Op.like]: <span class="string">'t%'</span> <span class="comment">//查询操作为like，值为以 t开头</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="在-Koa-中应用-MongoDB-数据库"><a href="#在-Koa-中应用-MongoDB-数据库" class="headerlink" title="在 Koa 中应用 MongoDB 数据库"></a>在 Koa 中应用 MongoDB 数据库</h3><p>在开发 Node.js 应用时， 一般借助 Mongoose 类库来访问数据库</p>
+<h3 id="在Koa中应用Redis数据库"><a href="#在Koa中应用Redis数据库" class="headerlink" title="在Koa中应用Redis数据库"></a>在Koa中应用Redis数据库</h3><p><code>npm install redis -save</code></p>
+<h2 id="7-单元测试"><a href="#7-单元测试" class="headerlink" title="7 单元测试"></a>7 单元测试</h2><h2 id="8-优化与部署"><a href="#8-优化与部署" class="headerlink" title="8 优化与部署"></a>8 优化与部署</h2><h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><p><code>npm install log4js -save</code></p>
+<p>根据日志的用途， 一般可以将日志分为访问日志和应用日志</p>
+<p>应用日志包括 debug、 info、 warn 和 error 等不同级别</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p><code>npm install pm2@lastst -g</code></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

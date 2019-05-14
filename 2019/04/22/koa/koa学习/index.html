@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        koa学习 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    
+        <div class="hide">
+            <div class="avatar">
+                <img src="/img/avatar.png">
+            </div>
+            <div class="name">
+                <i>Alex</i>
+            </div>
+        </div>
+        <div class="hide" id="nav-content">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="iconfont icon-shouye1"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/tags">
+                        <i class="iconfont icon-biaoqian1"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/archives">
+                        <i class="iconfont icon-guidang2"></i>
+                        <span>ARCHIVES</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/">
+                        <i class="iconfont icon-guanyu2"></i>
+                        <span>ABOUT</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a id="search">
+                        <i class="iconfont icon-sousuo1"></i>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#koa-学习"><span class="toc-text">koa 学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#洋葱模型"><span class="toc-text">洋葱模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Middleware"><span class="toc-text">Middleware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Router"><span class="toc-text">Router</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Basic-Usage"><span class="toc-text">Basic Usage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态路由"><span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#url传值"><span class="toc-text">url传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#公共数据"><span class="toc-text">公共数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ejs模板引擎"><span class="toc-text">ejs模板引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-1"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ejs语法"><span class="toc-text">ejs语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据绑定"><span class="toc-text">数据绑定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#for循环"><span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#引入模板"><span class="toc-text">引入模板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#绑定html数据"><span class="toc-text">绑定html数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取post提交的数据"><span class="toc-text">获取post提交的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原生"><span class="toc-text">原生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#koa-bodyparser中间件"><span class="toc-text">koa-bodyparser中间件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源"><span class="toc-text">静态资源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原生-1"><span class="toc-text">原生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中间件"><span class="toc-text">中间件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#art-template模板引擎"><span class="toc-text">art-template模板引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-2"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-1"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#syntax"><span class="toc-text">syntax</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie"><span class="toc-text">cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子代码"><span class="toc-text">例子代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session"><span class="toc-text">session</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库存储方案"><span class="toc-text">数据库存储方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子代码-1"><span class="toc-text">例子代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证码"><span class="toc-text">验证码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage-2"><span class="toc-text">Usage</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        koa学习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-04-22 14:45:29</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#koa" title="koa">koa</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h1 id="koa-学习"><a href="#koa-学习" class="headerlink" title="koa 学习"></a>koa 学习</h1><h2 id="洋葱模型"><a href="#洋葱模型" class="headerlink" title="洋葱模型"></a>洋葱模型</h2><p><img src="https://camo.githubusercontent.com/d80cf3b511ef4898bcde9a464de491fa15a50d06/68747470733a2f2f7261772e6769746875622e636f6d2f66656e676d6b322f6b6f612d67756964652f6d61737465722f6f6e696f6e2e706e67" alt></p>
+<h2 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h2><h3 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h3><p><code>koa-router</code></p>
+<p><a href="https://github.com/ZijianHe/koa-router" target="_blank" rel="noopener">link</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><code>npm install koa-router</code></p>
+<h4 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> Router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> Router();</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">'/'</span>, (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="comment">// ctx.router available</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app</span><br><span class="line">  .use(router.routes())</span><br><span class="line">  .use(router.allowedMethods());</span><br></pre></td></tr></table></figure>
+<p>Additionaly, <code>router.all()</code> can be used to match against all methods.</p>
+<h4 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/:id'</span>, (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.params)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="url传值"><a href="#url传值" class="headerlink" title="url传值"></a>url传值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/news'</span>, (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.query) <span class="comment">// -&gt; 推荐</span></span><br><span class="line">  <span class="built_in">console</span>.log(ctx.querystring)</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.url)</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.request.url)</span><br><span class="line">  <span class="built_in">console</span>.log(ctx.request.query)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="公共数据"><a href="#公共数据" class="headerlink" title="公共数据"></a>公共数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">  ctx.state = &#123;</span><br><span class="line">    session: <span class="keyword">this</span>.session,</span><br><span class="line">    title: <span class="string">'app'</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="ejs模板引擎"><a href="#ejs模板引擎" class="headerlink" title="ejs模板引擎"></a>ejs模板引擎</h3><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><p><code>npm i ejs koa-views</code></p>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> views = <span class="built_in">require</span>(<span class="string">'koa-views'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line">app.use(views(path.join(__dirname, <span class="string">'../views'</span>), &#123;</span><br><span class="line">  extension: <span class="string">'ejs'</span></span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.use(views('views', &#123; extension: 'ejs' &#125;)) // 后缀名ejs</span></span><br><span class="line"><span class="comment">// app.use(views('views', &#123; map: &#123;html: 'ejs' &#125;&#125;)) // 后缀名html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在views文件夹下新建index.ejs</span></span><br><span class="line">app.use(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> ctx.render(<span class="string">'index'</span>, &#123;</span><br><span class="line">    title: <span class="string">'hello'</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="ejs语法"><a href="#ejs语法" class="headerlink" title="ejs语法"></a>ejs语法</h4><h5 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h5><p><code>&lt;%= title %&gt;</code></p>
+<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><p>list是绑定的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">for</span>(<span class="keyword">let</span> i; i&lt; list.length: i++) &#123; %&gt;</span><br><span class="line">  &lt;%= list[i] %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="引入模板"><a href="#引入模板" class="headerlink" title="引入模板"></a>引入模板</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// public/header.ejs</span></span><br><span class="line">&lt;h2&gt;Header&lt;<span class="regexp">/h2&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;% include public/header.ejs %&gt;</code></p>
+<h5 id="绑定html数据"><a href="#绑定html数据" class="headerlink" title="绑定html数据"></a>绑定html数据</h5><p><code>&lt;%- html %&gt;</code></p>
+<h3 id="获取post提交的数据"><a href="#获取post提交的数据" class="headerlink" title="获取post提交的数据"></a>获取post提交的数据</h3><h4 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">app.use( <span class="keyword">async</span> ( ctx ) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( ctx.url === <span class="string">'/'</span> &amp;&amp; ctx.method === <span class="string">'GET'</span> ) &#123;</span><br><span class="line">    <span class="comment">// 当GET请求时候返回表单页面</span></span><br><span class="line">    <span class="keyword">let</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;h1&gt;koa2 request post demo&lt;/h1&gt;</span></span><br><span class="line"><span class="string">      &lt;form method="POST" action="/"&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;userName&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;input name="userName" /&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;nickName&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;input name="nickName" /&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;email&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;input name="email" /&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">        &lt;button type="submit"&gt;submit&lt;/button&gt;</span></span><br><span class="line"><span class="string">      &lt;/form&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">    ctx.body = html</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( ctx.url === <span class="string">'/'</span> &amp;&amp; ctx.method === <span class="string">'POST'</span> ) &#123;</span><br><span class="line">    <span class="comment">// 当POST请求的时候，解析POST表单里的数据，并显示出来</span></span><br><span class="line">    <span class="keyword">let</span> postData = <span class="keyword">await</span> parsePostData( ctx )</span><br><span class="line">    ctx.body = postData</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 其他请求显示404</span></span><br><span class="line">    ctx.body = <span class="string">'&lt;h1&gt;404！！！ o(╯□╰)o&lt;/h1&gt;'</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解析上下文里node原生请求的POST参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parsePostData</span>(<span class="params"> ctx </span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> postdata = <span class="string">""</span>;</span><br><span class="line">      ctx.req.addListener(<span class="string">'data'</span>, (data) =&gt; &#123;</span><br><span class="line">        postdata += data</span><br><span class="line">      &#125;)</span><br><span class="line">      ctx.req.addListener(<span class="string">"end"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> parseData = parseQueryStr( postdata )</span><br><span class="line">        resolve( parseData )</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span> ( err ) &#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将POST请求参数字符串解析成JSON</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseQueryStr</span>(<span class="params"> queryStr </span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> queryData = &#123;&#125;</span><br><span class="line">  <span class="keyword">let</span> queryStrList = queryStr.split(<span class="string">'&amp;'</span>)</span><br><span class="line">  <span class="built_in">console</span>.log( queryStrList )</span><br><span class="line">  <span class="keyword">for</span> (  <span class="keyword">let</span> [ index, queryStr ] <span class="keyword">of</span> queryStrList.entries()  ) &#123;</span><br><span class="line">    <span class="keyword">let</span> itemList = queryStr.split(<span class="string">'='</span>)</span><br><span class="line">    queryData[ itemList[<span class="number">0</span>] ] = <span class="built_in">decodeURIComponent</span>(itemList[<span class="number">1</span>])</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> queryData</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="koa-bodyparser中间件"><a href="#koa-bodyparser中间件" class="headerlink" title="koa-bodyparser中间件"></a>koa-bodyparser中间件</h4><p><code>npm i koa-bodyparser</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用ctx.body解析中间件</span></span><br><span class="line">app.use(bodyParser())</span><br><span class="line"></span><br><span class="line">app.use( <span class="keyword">async</span> ( ctx ) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( ctx.url === <span class="string">'/'</span> &amp;&amp; ctx.method === <span class="string">'GET'</span> ) &#123;</span><br><span class="line">    <span class="comment">// 当GET请求时候返回表单页面</span></span><br><span class="line">    <span class="keyword">let</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;h1&gt;koa2 request post demo&lt;/h1&gt;</span></span><br><span class="line"><span class="string">      &lt;form method="POST" action="/"&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;userName&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;input name="userName" /&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;nickName&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;input name="nickName" /&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;email&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;input name="email" /&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">        &lt;button type="submit"&gt;submit&lt;/button&gt;</span></span><br><span class="line"><span class="string">      &lt;/form&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">    ctx.body = html</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( ctx.url === <span class="string">'/'</span> &amp;&amp; ctx.method === <span class="string">'POST'</span> ) &#123;</span><br><span class="line">    <span class="comment">// 当POST请求的时候，中间件koa-bodyparser解析POST表单里的数据，并显示出来</span></span><br><span class="line">    <span class="keyword">let</span> postData = ctx.request.body <span class="comment">// -&gt; 就是这一句</span></span><br><span class="line">    ctx.body = postData</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 其他请求显示404</span></span><br><span class="line">    ctx.body = <span class="string">'&lt;h1&gt;404！！！ o(╯□╰)o&lt;/h1&gt;'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h3><h4 id="原生-1"><a href="#原生-1" class="headerlink" title="原生"></a>原生</h4><p><a href="https://github.com/ChenShenhai/koa2-note/blob/master/note/static/server.md" target="_blank" rel="noopener">link</a></p>
+<h4 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h4><p><code>koa-static</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">static</span> = <span class="built_in">require</span>(<span class="string">'koa-static'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 静态资源目录对于相对入口文件index.js的路径</span></span><br><span class="line"><span class="keyword">const</span> staticPath = <span class="string">'./static'</span></span><br><span class="line"></span><br><span class="line">app.use(<span class="keyword">static</span>(</span><br><span class="line">  path.join( __dirname,  staticPath)</span><br><span class="line">))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use( <span class="keyword">async</span> ( ctx ) =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'[demo] static-use-middleware is starting at port 3000'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="art-template模板引擎"><a href="#art-template模板引擎" class="headerlink" title="art-template模板引擎"></a>art-template模板引擎</h3><ul>
+<li>速度极快</li>
+<li>支持ejs语法</li>
+</ul>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><p><code>npm install --save art-template koa-art-template</code></p>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> render = <span class="built_in">require</span>(<span class="string">'koa-art-template'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line">render(app, &#123;</span><br><span class="line">  root: path.join(__dirname, <span class="string">'view'</span>),</span><br><span class="line">  extname: <span class="string">'.art'</span>,</span><br><span class="line">  debug: process.env.NODE_ENV !== <span class="string">'production'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.use(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> ctx.render(<span class="string">'user'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="syntax"><a href="#syntax" class="headerlink" title="syntax"></a>syntax</h4><p><a href="https://aui.github.io/art-template/docs/syntax.html" target="_blank" rel="noopener">link</a></p>
+<p><code></code></p>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>koa提供了从上下文直接读取、写入cookie的方法</p>
+<ul>
+<li>ctx.cookies.get(name, [options]) 读取上下文请求中的cookie</li>
+<li>ctx.cookies.set(name, value, [options]) 在上下文中写入cookie</li>
+</ul>
+<p>koa2 中操作的cookies是使用了npm的cookies模块，源码在<a href="https://github.com/pillarjs/cookies" target="_blank" rel="noopener">https://github.com/pillarjs/cookies</a>，所以在读写cookie的使用参数与该模块的使用一致。</p>
+<h3 id="例子代码"><a href="#例子代码" class="headerlink" title="例子代码"></a>例子代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"></span><br><span class="line">app.use( <span class="keyword">async</span> ( ctx ) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( ctx.url === <span class="string">'/index'</span> ) &#123;</span><br><span class="line">    ctx.cookies.set(</span><br><span class="line">      <span class="string">'cid'</span>,</span><br><span class="line">      <span class="string">'hello world'</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        domain: <span class="string">'localhost'</span>,  <span class="comment">// 写cookie所在的域名</span></span><br><span class="line">        path: <span class="string">'/index'</span>,       <span class="comment">// 写cookie所在的路径</span></span><br><span class="line">        maxAge: <span class="number">10</span> * <span class="number">60</span> * <span class="number">1000</span>, <span class="comment">// cookie有效时长</span></span><br><span class="line">        expires: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2017-02-15'</span>),  <span class="comment">// cookie失效时间</span></span><br><span class="line">        httpOnly: <span class="literal">false</span>,  <span class="comment">// 是否只用于http请求中获取</span></span><br><span class="line">        overwrite: <span class="literal">false</span>  <span class="comment">// 是否允许重写</span></span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">    ctx.body = <span class="string">'cookie is ok'</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ctx.body = <span class="string">'hello world'</span> </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'[demo] cookie is starting at port 3000'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>koa2原生功能只提供了cookie的操作，但是没有提供session操作。session就只用自己实现或者通过第三方中间件实现。在koa2中实现session的方案有一下几种</p>
+<ul>
+<li>如果session数据量很小，可以直接存在内存中</li>
+<li>如果session数据量很大，则需要存储介质存放session数据</li>
+</ul>
+<h3 id="数据库存储方案"><a href="#数据库存储方案" class="headerlink" title="数据库存储方案"></a>数据库存储方案</h3><ul>
+<li>将session存放在MySQL数据库中</li>
+<li>需要用到中间件<ul>
+<li>koa-session-minimal 适用于koa2 的session中间件，提供存储介质的读写接口 。</li>
+<li>koa-mysql-session 为koa-session-minimal中间件提供MySQL数据库的session数据读写操作。</li>
+<li>将sessionId和对应的数据存到数据库</li>
+</ul>
+</li>
+<li>将数据库的存储的sessionId存到页面的cookie中</li>
+<li>根据cookie的sessionId去获取对于的session信息</li>
+</ul>
+<h3 id="例子代码-1"><a href="#例子代码-1" class="headerlink" title="例子代码"></a>例子代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">'koa-session-minimal'</span>)</span><br><span class="line"><span class="keyword">const</span> MysqlSession = <span class="built_in">require</span>(<span class="string">'koa-mysql-session'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置存储session信息的mysql</span></span><br><span class="line"><span class="keyword">let</span> store = <span class="keyword">new</span> MysqlSession(&#123;</span><br><span class="line">  user: <span class="string">'root'</span>,</span><br><span class="line">  password: <span class="string">'abc123'</span>,</span><br><span class="line">  database: <span class="string">'koa_demo'</span>,</span><br><span class="line">  host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 存放sessionId的cookie配置</span></span><br><span class="line"><span class="keyword">let</span> cookie = &#123;</span><br><span class="line">  maxAge: <span class="string">''</span>, <span class="comment">// cookie有效时长</span></span><br><span class="line">  expires: <span class="string">''</span>,  <span class="comment">// cookie失效时间</span></span><br><span class="line">  path: <span class="string">''</span>, <span class="comment">// 写cookie所在的路径</span></span><br><span class="line">  domain: <span class="string">''</span>, <span class="comment">// 写cookie所在的域名</span></span><br><span class="line">  httpOnly: <span class="string">''</span>, <span class="comment">// 是否只用于http请求中获取</span></span><br><span class="line">  overwrite: <span class="string">''</span>,  <span class="comment">// 是否允许重写</span></span><br><span class="line">  secure: <span class="string">''</span>,</span><br><span class="line">  sameSite: <span class="string">''</span>,</span><br><span class="line">  signed: <span class="string">''</span>,</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用session中间件</span></span><br><span class="line">app.use(session(&#123;</span><br><span class="line">  key: <span class="string">'SESSION_ID'</span>,</span><br><span class="line">  store: store,</span><br><span class="line">  cookie: cookie</span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">app.use( <span class="keyword">async</span> ( ctx ) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置session</span></span><br><span class="line">  <span class="keyword">if</span> ( ctx.url === <span class="string">'/set'</span> ) &#123;</span><br><span class="line">    ctx.session = &#123;</span><br><span class="line">      user_id: <span class="built_in">Math</span>.random().toString(<span class="number">36</span>).substr(<span class="number">2</span>),</span><br><span class="line">      count: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    ctx.body = ctx.session</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( ctx.url === <span class="string">'/'</span> ) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取session信息</span></span><br><span class="line">    ctx.session.count = ctx.session.count + <span class="number">1</span></span><br><span class="line">    ctx.body = ctx.session</span><br><span class="line">  &#125; </span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'[demo] session is starting at port 3000'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><p><code>npm install --save svg-captcha</code></p>
+<h3 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> svgCaptcha = <span class="built_in">require</span>(<span class="string">'svg-captcha'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> captcha = svgCaptcha.create();</span><br><span class="line"><span class="built_in">console</span>.log(captcha);</span><br><span class="line"><span class="comment">// &#123;data: '&lt;svg.../svg&gt;', text: 'abcd'&#125;</span></span><br></pre></td></tr></table></figure>
+<p>with express</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> svgCaptcha = <span class="built_in">require</span>(<span class="string">'svg-captcha'</span>);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/captcha'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> captcha = svgCaptcha.create();</span><br><span class="line">	req.session.captcha = captcha.text;</span><br><span class="line">	</span><br><span class="line">	res.type(<span class="string">'svg'</span>);</span><br><span class="line">	res.status(<span class="number">200</span>).send(captcha.data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>with koa</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> captcha = svgCaptcha.create(&#123;</span><br><span class="line">  size: <span class="number">6</span>,</span><br><span class="line">  fontSize: <span class="number">50</span>,</span><br><span class="line">  width: <span class="number">100</span>,</span><br><span class="line">  height: <span class="number">40</span>,</span><br><span class="line">  background: <span class="string">'#cc9966'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ctx.session.code = captcha.text</span><br><span class="line">ctx.response.type = <span class="string">'image/svg+xml'</span></span><br><span class="line">ctx.body = captcha.data</span><br></pre></td></tr></table></figure>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
