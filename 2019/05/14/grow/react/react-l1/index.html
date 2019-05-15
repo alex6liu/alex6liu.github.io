@@ -1,202 +1,1226 @@
 <!DOCTYPE html>
-<html lang="en">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content>
-    <meta name="keyword" content>
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
-    <title>
-        
-        react l1 - undefined
-        
-    </title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Create basic componentsUsing JSXUnderstanding component specsUnderstanding basic lifecycle eventsUsing state and propsUnderstanding react event systemCreate reusable componentsValidating propsTransfer">
+<meta name="keywords" content="l1,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react l1">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/grow/react/react-l1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Create basic componentsUsing JSXUnderstanding component specsUnderstanding basic lifecycle eventsUsing state and propsUnderstanding react event systemCreate reusable componentsValidating propsTransfer">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-15T02:38:57.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react l1">
+<meta name="twitter:description" content="Create basic componentsUsing JSXUnderstanding component specsUnderstanding basic lifecycle eventsUsing state and propsUnderstanding react event systemCreate reusable componentsValidating propsTransfer">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/05/14/grow/react/react-l1/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>react l1 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
     </button>
+  </div>
 </div>
 
-<div class="index-about">
-    <i>  </i>
-</div>
 
-<div class="index-container">
-    
-    <div class="index-left">
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
-<div class="nav" id="nav">
-    
-        <div class="hide">
-            <div class="avatar">
-                <img src="/img/avatar.png">
-            </div>
-            <div class="name">
-                <i>Alex</i>
-            </div>
-        </div>
-        <div class="hide" id="nav-content">
-            <ul>
-                <li>
-                    <a href="/">
-                        <i class="iconfont icon-shouye1"></i>
-                        <span>HOME</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tags">
-                        <i class="iconfont icon-biaoqian1"></i>
-                        <span>TAGS</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/archives">
-                        <i class="iconfont icon-guidang2"></i>
-                        <span>ARCHIVES</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/about/">
-                        <i class="iconfont icon-guanyu2"></i>
-                        <span>ABOUT</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a id="search">
-                        <i class="iconfont icon-sousuo1"></i>
-                        <span>SEARCH</span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
     
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-basic-components"><span class="toc-text">Create basic components</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-JSX"><span class="toc-text">Using JSX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-component-specs"><span class="toc-text">Understanding component specs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-basic-lifecycle-events"><span class="toc-text">Understanding basic lifecycle events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-state-and-props"><span class="toc-text">Using state and props</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-react-event-system"><span class="toc-text">Understanding react event system</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-reusable-components"><span class="toc-text">Create reusable components</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Validating-props"><span class="toc-text">Validating props</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transferring-props-between-components"><span class="toc-text">Transferring props between components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-mixins"><span class="toc-text">Creating mixins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-refs"><span class="toc-text">Using refs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-complex-components"><span class="toc-text">Create complex components</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-full-component-lifecycle"><span class="toc-text">Understanding full component lifecycle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-React-top-level-API"><span class="toc-text">Understanding React top-level API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-raw-HTML-in-React-components"><span class="toc-text">Using raw HTML in React components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-animation"><span class="toc-text">Adding animation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-ES2015"><span class="toc-text">Using ES2015</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance"><span class="toc-text">Performance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-components-rendering-system"><span class="toc-text">Understanding components rendering system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-PureRenderMixin"><span class="toc-text">Using PureRenderMixin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-immutable-data-structures-ImmutableJS"><span class="toc-text">Using immutable data structures (ImmutableJS)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SPA"><span class="toc-text">SPA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-SPA-using-React-Router"><span class="toc-text">Creating SPA using React Router</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing"><span class="toc-text">Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unit-testing-using-Jest-and-or-other-testing-frameworks"><span class="toc-text">Unit testing using Jest and/or other testing frameworks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-React-testing-utilities"><span class="toc-text">Using React testing utilities</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-JSDom-for-testing"><span class="toc-text">Using JSDom for testing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tools"><span class="toc-text">Tools</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-React-Devtools"><span class="toc-text">Using React Devtools</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-and-deploying-React-apps"><span class="toc-text">Building and deploying React apps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-React-Hot-Loader"><span class="toc-text">Using React Hot Loader</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Understand-Flux"><span class="toc-text">Understand Flux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-unidirectional-data-flow"><span class="toc-text">Understanding unidirectional data flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-dispatcher"><span class="toc-text">Using dispatcher</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-stores"><span class="toc-text">Creating stores</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-actions"><span class="toc-text">Creating actions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Experience-with-any-library-Redux-Mobx-Reflux-Alt-etc"><span class="toc-text">Experience with any library (Redux, Mobx, Reflux, Alt, etc.)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Advanced-React-usage"><span class="toc-text">Advanced React usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Designing-app-architecture-using-React"><span class="toc-text">Designing app architecture using React</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Profiling-and-optimizing-react-components"><span class="toc-text">Profiling and optimizing react components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Understanding-virtual-DOM"><span class="toc-text">Understanding virtual DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-server-side-rendering"><span class="toc-text">Using server side rendering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integrating-React-into-other-frameworks-e-g-Backbone"><span class="toc-text">Integrating React into other frameworks (e.g. Backbone)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-way-binding"><span class="toc-text">Two-way binding</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-E2E-tests"><span class="toc-text">Creating E2E tests</span></a></li></ol></li></ol>
-</div>
     
-</div>
-
-
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
-            <span id="begin-search">search</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
+      
     
-    <div class="index-middle">
-        <!-- Main Content -->
-        
 
+    
+      
+    
 
-<div class="post-container">
-    <div class="post-title">
-        react l1
-    </div>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
-    <div class="post-meta">
-        <span class="attr">Post：<span>2019-05-14 09:49:30</span></span>
-        
-        <span class="attr">Tags：/
-        
-        <a class="tag" href="/tags/#react l1" title="react l1">react l1</a>
-        <span>/</span>
+  </li>
         
         
-        </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
-</span>
-
-    </div>
-    <div class="post-content ">
-        <h2 id="Create-basic-components"><a href="#Create-basic-components" class="headerlink" title="Create basic components"></a>Create basic components</h2><h3 id="Using-JSX"><a href="#Using-JSX" class="headerlink" title="Using JSX"></a>Using JSX</h3><h3 id="Understanding-component-specs"><a href="#Understanding-component-specs" class="headerlink" title="Understanding component specs"></a>Understanding component specs</h3><h3 id="Understanding-basic-lifecycle-events"><a href="#Understanding-basic-lifecycle-events" class="headerlink" title="Understanding basic lifecycle events"></a>Understanding basic lifecycle events</h3><h3 id="Using-state-and-props"><a href="#Using-state-and-props" class="headerlink" title="Using state and props"></a>Using state and props</h3><h3 id="Understanding-react-event-system"><a href="#Understanding-react-event-system" class="headerlink" title="Understanding react event system"></a>Understanding react event system</h3><h2 id="Create-reusable-components"><a href="#Create-reusable-components" class="headerlink" title="Create reusable components"></a>Create reusable components</h2><h3 id="Validating-props"><a href="#Validating-props" class="headerlink" title="Validating props"></a>Validating props</h3><h3 id="Transferring-props-between-components"><a href="#Transferring-props-between-components" class="headerlink" title="Transferring props between components"></a>Transferring props between components</h3><h3 id="Creating-mixins"><a href="#Creating-mixins" class="headerlink" title="Creating mixins"></a>Creating mixins</h3><h3 id="Using-refs"><a href="#Using-refs" class="headerlink" title="Using refs"></a>Using refs</h3><h2 id="Create-complex-components"><a href="#Create-complex-components" class="headerlink" title="Create complex components"></a>Create complex components</h2><h3 id="Understanding-full-component-lifecycle"><a href="#Understanding-full-component-lifecycle" class="headerlink" title="Understanding full component lifecycle"></a>Understanding full component lifecycle</h3><h3 id="Understanding-React-top-level-API"><a href="#Understanding-React-top-level-API" class="headerlink" title="Understanding React top-level API"></a>Understanding React top-level API</h3><h3 id="Using-raw-HTML-in-React-components"><a href="#Using-raw-HTML-in-React-components" class="headerlink" title="Using raw HTML in React components"></a>Using raw HTML in React components</h3><h3 id="Adding-animation"><a href="#Adding-animation" class="headerlink" title="Adding animation"></a>Adding animation</h3><h3 id="Using-ES2015"><a href="#Using-ES2015" class="headerlink" title="Using ES2015"></a>Using ES2015</h3><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><h3 id="Understanding-components-rendering-system"><a href="#Understanding-components-rendering-system" class="headerlink" title="Understanding components rendering system"></a>Understanding components rendering system</h3><h3 id="Using-PureRenderMixin"><a href="#Using-PureRenderMixin" class="headerlink" title="Using PureRenderMixin"></a>Using PureRenderMixin</h3><h3 id="Using-immutable-data-structures-ImmutableJS"><a href="#Using-immutable-data-structures-ImmutableJS" class="headerlink" title="Using immutable data structures (ImmutableJS)"></a>Using immutable data structures (ImmutableJS)</h3><h2 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h2><h3 id="Creating-SPA-using-React-Router"><a href="#Creating-SPA-using-React-Router" class="headerlink" title="Creating SPA using React Router"></a>Creating SPA using React Router</h3><h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><h3 id="Unit-testing-using-Jest-and-or-other-testing-frameworks"><a href="#Unit-testing-using-Jest-and-or-other-testing-frameworks" class="headerlink" title="Unit testing using Jest and/or other testing frameworks"></a>Unit testing using Jest and/or other testing frameworks</h3><h3 id="Using-React-testing-utilities"><a href="#Using-React-testing-utilities" class="headerlink" title="Using React testing utilities"></a>Using React testing utilities</h3><h3 id="Using-JSDom-for-testing"><a href="#Using-JSDom-for-testing" class="headerlink" title="Using JSDom for testing"></a>Using JSDom for testing</h3><h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Using-React-Devtools"><a href="#Using-React-Devtools" class="headerlink" title="Using React Devtools"></a>Using React Devtools</h3><h3 id="Building-and-deploying-React-apps"><a href="#Building-and-deploying-React-apps" class="headerlink" title="Building and deploying React apps"></a>Building and deploying React apps</h3><h3 id="Using-React-Hot-Loader"><a href="#Using-React-Hot-Loader" class="headerlink" title="Using React Hot Loader"></a>Using React Hot Loader</h3><h2 id="Understand-Flux"><a href="#Understand-Flux" class="headerlink" title="Understand Flux"></a>Understand Flux</h2><h3 id="Understanding-unidirectional-data-flow"><a href="#Understanding-unidirectional-data-flow" class="headerlink" title="Understanding unidirectional data flow"></a>Understanding unidirectional data flow</h3><h3 id="Using-dispatcher"><a href="#Using-dispatcher" class="headerlink" title="Using dispatcher"></a>Using dispatcher</h3><h3 id="Creating-stores"><a href="#Creating-stores" class="headerlink" title="Creating stores"></a>Creating stores</h3><h3 id="Creating-actions"><a href="#Creating-actions" class="headerlink" title="Creating actions"></a>Creating actions</h3><h3 id="Experience-with-any-library-Redux-Mobx-Reflux-Alt-etc"><a href="#Experience-with-any-library-Redux-Mobx-Reflux-Alt-etc" class="headerlink" title="Experience with any library (Redux, Mobx, Reflux, Alt, etc.)"></a>Experience with any library (Redux, Mobx, Reflux, Alt, etc.)</h3><h2 id="Advanced-React-usage"><a href="#Advanced-React-usage" class="headerlink" title="Advanced React usage"></a>Advanced React usage</h2><h3 id="Designing-app-architecture-using-React"><a href="#Designing-app-architecture-using-React" class="headerlink" title="Designing app architecture using React"></a>Designing app architecture using React</h3><h3 id="Profiling-and-optimizing-react-components"><a href="#Profiling-and-optimizing-react-components" class="headerlink" title="Profiling and optimizing react components"></a>Profiling and optimizing react components</h3><h3 id="Understanding-virtual-DOM"><a href="#Understanding-virtual-DOM" class="headerlink" title="Understanding virtual DOM"></a>Understanding virtual DOM</h3><h3 id="Using-server-side-rendering"><a href="#Using-server-side-rendering" class="headerlink" title="Using server side rendering"></a>Using server side rendering</h3><h3 id="Integrating-React-into-other-frameworks-e-g-Backbone"><a href="#Integrating-React-into-other-frameworks-e-g-Backbone" class="headerlink" title="Integrating React into other frameworks (e.g. Backbone)"></a>Integrating React into other frameworks (e.g. Backbone)</h3><h3 id="Two-way-binding"><a href="#Two-way-binding" class="headerlink" title="Two-way binding"></a>Two-way binding</h3><h3 id="Creating-E2E-tests"><a href="#Creating-E2E-tests" class="headerlink" title="Creating E2E tests"></a>Creating E2E tests</h3>
         
-        <br>
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
+          
+          <li class="menu-item menu-item-tags">
 
-        <div id="lv-container">
-        </div>
+    
+    
+    
+      
+    
 
-    </div>
-</div>
+    
+      
+    
 
-    </div>
-</div>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">30</span></a>
 
-
-<footer class="footer">
-    <ul class="list-inline text-center">
+  </li>
         
         
-
         
+          
+          <li class="menu-item menu-item-archives">
 
-        
+    
+    
+    
+      
+    
 
-        
+    
+      
+    
 
-        
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">61</span></a>
 
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
     </ul>
+  
+
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/grow/react/react-l1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react l1
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-14 09:49:30" itemprop="dateCreated datePublished" datetime="2019-05-14T09:49:30+08:00">2019-05-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-15 10:38:57" itemprop="dateModified" datetime="2019-05-15T10:38:57+08:00">2019-05-15</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Create-basic-components"><a href="#Create-basic-components" class="headerlink" title="Create basic components"></a>Create basic components</h2><h3 id="Using-JSX"><a href="#Using-JSX" class="headerlink" title="Using JSX"></a>Using JSX</h3><h3 id="Understanding-component-specs"><a href="#Understanding-component-specs" class="headerlink" title="Understanding component specs"></a>Understanding component specs</h3><h3 id="Understanding-basic-lifecycle-events"><a href="#Understanding-basic-lifecycle-events" class="headerlink" title="Understanding basic lifecycle events"></a>Understanding basic lifecycle events</h3><h3 id="Using-state-and-props"><a href="#Using-state-and-props" class="headerlink" title="Using state and props"></a>Using state and props</h3><h3 id="Understanding-react-event-system"><a href="#Understanding-react-event-system" class="headerlink" title="Understanding react event system"></a>Understanding react event system</h3><h2 id="Create-reusable-components"><a href="#Create-reusable-components" class="headerlink" title="Create reusable components"></a>Create reusable components</h2><h3 id="Validating-props"><a href="#Validating-props" class="headerlink" title="Validating props"></a>Validating props</h3><h3 id="Transferring-props-between-components"><a href="#Transferring-props-between-components" class="headerlink" title="Transferring props between components"></a>Transferring props between components</h3><h3 id="Creating-mixins"><a href="#Creating-mixins" class="headerlink" title="Creating mixins"></a>Creating mixins</h3><h3 id="Using-refs"><a href="#Using-refs" class="headerlink" title="Using refs"></a>Using refs</h3><h2 id="Create-complex-components"><a href="#Create-complex-components" class="headerlink" title="Create complex components"></a>Create complex components</h2><h3 id="Understanding-full-component-lifecycle"><a href="#Understanding-full-component-lifecycle" class="headerlink" title="Understanding full component lifecycle"></a>Understanding full component lifecycle</h3><h3 id="Understanding-React-top-level-API"><a href="#Understanding-React-top-level-API" class="headerlink" title="Understanding React top-level API"></a>Understanding React top-level API</h3><h3 id="Using-raw-HTML-in-React-components"><a href="#Using-raw-HTML-in-React-components" class="headerlink" title="Using raw HTML in React components"></a>Using raw HTML in React components</h3><h3 id="Adding-animation"><a href="#Adding-animation" class="headerlink" title="Adding animation"></a>Adding animation</h3><h3 id="Using-ES2015"><a href="#Using-ES2015" class="headerlink" title="Using ES2015"></a>Using ES2015</h3><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><h3 id="Understanding-components-rendering-system"><a href="#Understanding-components-rendering-system" class="headerlink" title="Understanding components rendering system"></a>Understanding components rendering system</h3><h3 id="Using-PureRenderMixin"><a href="#Using-PureRenderMixin" class="headerlink" title="Using PureRenderMixin"></a>Using PureRenderMixin</h3><h3 id="Using-immutable-data-structures-ImmutableJS"><a href="#Using-immutable-data-structures-ImmutableJS" class="headerlink" title="Using immutable data structures (ImmutableJS)"></a>Using immutable data structures (ImmutableJS)</h3><h2 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h2><h3 id="Creating-SPA-using-React-Router"><a href="#Creating-SPA-using-React-Router" class="headerlink" title="Creating SPA using React Router"></a>Creating SPA using React Router</h3><h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><h3 id="Unit-testing-using-Jest-and-or-other-testing-frameworks"><a href="#Unit-testing-using-Jest-and-or-other-testing-frameworks" class="headerlink" title="Unit testing using Jest and/or other testing frameworks"></a>Unit testing using Jest and/or other testing frameworks</h3><h3 id="Using-React-testing-utilities"><a href="#Using-React-testing-utilities" class="headerlink" title="Using React testing utilities"></a>Using React testing utilities</h3><h3 id="Using-JSDom-for-testing"><a href="#Using-JSDom-for-testing" class="headerlink" title="Using JSDom for testing"></a>Using JSDom for testing</h3><h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Using-React-Devtools"><a href="#Using-React-Devtools" class="headerlink" title="Using React Devtools"></a>Using React Devtools</h3><h3 id="Building-and-deploying-React-apps"><a href="#Building-and-deploying-React-apps" class="headerlink" title="Building and deploying React apps"></a>Building and deploying React apps</h3><h3 id="Using-React-Hot-Loader"><a href="#Using-React-Hot-Loader" class="headerlink" title="Using React Hot Loader"></a>Using React Hot Loader</h3><h2 id="Understand-Flux"><a href="#Understand-Flux" class="headerlink" title="Understand Flux"></a>Understand Flux</h2><h3 id="Understanding-unidirectional-data-flow"><a href="#Understanding-unidirectional-data-flow" class="headerlink" title="Understanding unidirectional data flow"></a>Understanding unidirectional data flow</h3><h3 id="Using-dispatcher"><a href="#Using-dispatcher" class="headerlink" title="Using dispatcher"></a>Using dispatcher</h3><h3 id="Creating-stores"><a href="#Creating-stores" class="headerlink" title="Creating stores"></a>Creating stores</h3><h3 id="Creating-actions"><a href="#Creating-actions" class="headerlink" title="Creating actions"></a>Creating actions</h3><h3 id="Experience-with-any-library-Redux-Mobx-Reflux-Alt-etc"><a href="#Experience-with-any-library-Redux-Mobx-Reflux-Alt-etc" class="headerlink" title="Experience with any library (Redux, Mobx, Reflux, Alt, etc.)"></a>Experience with any library (Redux, Mobx, Reflux, Alt, etc.)</h3><h2 id="Advanced-React-usage"><a href="#Advanced-React-usage" class="headerlink" title="Advanced React usage"></a>Advanced React usage</h2><h3 id="Designing-app-architecture-using-React"><a href="#Designing-app-architecture-using-React" class="headerlink" title="Designing app architecture using React"></a>Designing app architecture using React</h3><h3 id="Profiling-and-optimizing-react-components"><a href="#Profiling-and-optimizing-react-components" class="headerlink" title="Profiling and optimizing react components"></a>Profiling and optimizing react components</h3><h3 id="Understanding-virtual-DOM"><a href="#Understanding-virtual-DOM" class="headerlink" title="Understanding virtual DOM"></a>Understanding virtual DOM</h3><h3 id="Using-server-side-rendering"><a href="#Using-server-side-rendering" class="headerlink" title="Using server side rendering"></a>Using server side rendering</h3><h3 id="Integrating-React-into-other-frameworks-e-g-Backbone"><a href="#Integrating-React-into-other-frameworks-e-g-Backbone" class="headerlink" title="Integrating React into other frameworks (e.g. Backbone)"></a>Integrating React into other frameworks (e.g. Backbone)</h3><h3 id="Two-way-binding"><a href="#Two-way-binding" class="headerlink" title="Two-way binding"></a>Two-way binding</h3><h3 id="Creating-E2E-tests"><a href="#Creating-E2E-tests" class="headerlink" title="Creating E2E tests"></a>Creating E2E tests</h3>
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/l1/" rel="tag"># l1</a>
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/grow/js/js-l1/" rel="next" title="js l1">
+                <i class="fa fa-chevron-left"></i> js l1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/14/grow/vue/vue-l1/" rel="prev" title="vue l1">
+                vue l1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Alex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-basic-components"><span class="nav-number">1.</span> <span class="nav-text">Create basic components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-JSX"><span class="nav-number">1.1.</span> <span class="nav-text">Using JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-component-specs"><span class="nav-number">1.2.</span> <span class="nav-text">Understanding component specs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-basic-lifecycle-events"><span class="nav-number">1.3.</span> <span class="nav-text">Understanding basic lifecycle events</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-state-and-props"><span class="nav-number">1.4.</span> <span class="nav-text">Using state and props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-react-event-system"><span class="nav-number">1.5.</span> <span class="nav-text">Understanding react event system</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-reusable-components"><span class="nav-number">2.</span> <span class="nav-text">Create reusable components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Validating-props"><span class="nav-number">2.1.</span> <span class="nav-text">Validating props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transferring-props-between-components"><span class="nav-number">2.2.</span> <span class="nav-text">Transferring props between components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-mixins"><span class="nav-number">2.3.</span> <span class="nav-text">Creating mixins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-refs"><span class="nav-number">2.4.</span> <span class="nav-text">Using refs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-complex-components"><span class="nav-number">3.</span> <span class="nav-text">Create complex components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-full-component-lifecycle"><span class="nav-number">3.1.</span> <span class="nav-text">Understanding full component lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-React-top-level-API"><span class="nav-number">3.2.</span> <span class="nav-text">Understanding React top-level API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-raw-HTML-in-React-components"><span class="nav-number">3.3.</span> <span class="nav-text">Using raw HTML in React components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adding-animation"><span class="nav-number">3.4.</span> <span class="nav-text">Adding animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-ES2015"><span class="nav-number">3.5.</span> <span class="nav-text">Using ES2015</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Performance"><span class="nav-number">4.</span> <span class="nav-text">Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-components-rendering-system"><span class="nav-number">4.1.</span> <span class="nav-text">Understanding components rendering system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-PureRenderMixin"><span class="nav-number">4.2.</span> <span class="nav-text">Using PureRenderMixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-immutable-data-structures-ImmutableJS"><span class="nav-number">4.3.</span> <span class="nav-text">Using immutable data structures (ImmutableJS)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SPA"><span class="nav-number">5.</span> <span class="nav-text">SPA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-SPA-using-React-Router"><span class="nav-number">5.1.</span> <span class="nav-text">Creating SPA using React Router</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Testing"><span class="nav-number">6.</span> <span class="nav-text">Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-testing-using-Jest-and-or-other-testing-frameworks"><span class="nav-number">6.1.</span> <span class="nav-text">Unit testing using Jest and/or other testing frameworks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-React-testing-utilities"><span class="nav-number">6.2.</span> <span class="nav-text">Using React testing utilities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-JSDom-for-testing"><span class="nav-number">6.3.</span> <span class="nav-text">Using JSDom for testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">7.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-React-Devtools"><span class="nav-number">7.1.</span> <span class="nav-text">Using React Devtools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-and-deploying-React-apps"><span class="nav-number">7.2.</span> <span class="nav-text">Building and deploying React apps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-React-Hot-Loader"><span class="nav-number">7.3.</span> <span class="nav-text">Using React Hot Loader</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Understand-Flux"><span class="nav-number">8.</span> <span class="nav-text">Understand Flux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-unidirectional-data-flow"><span class="nav-number">8.1.</span> <span class="nav-text">Understanding unidirectional data flow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-dispatcher"><span class="nav-number">8.2.</span> <span class="nav-text">Using dispatcher</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-stores"><span class="nav-number">8.3.</span> <span class="nav-text">Creating stores</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-actions"><span class="nav-number">8.4.</span> <span class="nav-text">Creating actions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experience-with-any-library-Redux-Mobx-Reflux-Alt-etc"><span class="nav-number">8.5.</span> <span class="nav-text">Experience with any library (Redux, Mobx, Reflux, Alt, etc.)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-React-usage"><span class="nav-number">9.</span> <span class="nav-text">Advanced React usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Designing-app-architecture-using-React"><span class="nav-number">9.1.</span> <span class="nav-text">Designing app architecture using React</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Profiling-and-optimizing-react-components"><span class="nav-number">9.2.</span> <span class="nav-text">Profiling and optimizing react components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-virtual-DOM"><span class="nav-number">9.3.</span> <span class="nav-text">Understanding virtual DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-server-side-rendering"><span class="nav-number">9.4.</span> <span class="nav-text">Using server side rendering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integrating-React-into-other-frameworks-e-g-Backbone"><span class="nav-number">9.5.</span> <span class="nav-text">Integrating React into other frameworks (e.g. Backbone)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-way-binding"><span class="nav-number">9.6.</span> <span class="nav-text">Two-way binding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-E2E-tests"><span class="nav-number">9.7.</span> <span class="nav-text">Creating E2E tests</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
 
 
 
 
-</body>
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
 
 <script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('Copied');
+        else $(this).text('Copy failed');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
 </html>
